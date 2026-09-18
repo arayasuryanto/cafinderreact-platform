@@ -6,6 +6,13 @@
   NODE_VERSION = "20.18.0"
   CI = "false"
 
+# Moved: the site now lives on cafinder.space (self-hosted). Forward every old Netlify URL there.
+[[redirects]]
+  from = "/*"
+  to = "https://cafinder.space/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
