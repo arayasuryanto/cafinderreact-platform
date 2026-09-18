@@ -1,42 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
 import favoritesService from '../../services/favoritesService';
 import './FavoriteButton.css';
 
 const FavoriteButton = ({ cafe, size = 'medium', showLabel = false }) => {
-  const { user } = useAuth();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    if (user && cafe) {
-      setIsFavorite(favoritesService.isFavorite(user.id, cafe.id));
+    if (cafe) {
+      setIsFavorite(favoritesService.isFavorite(favoritesService.getCurrentUserId(), cafe.id));
     }
-  }, [user, cafe]);
+  }, [cafe]);
 
   const handleToggleFavorite = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    if (!user) {
-      // Show login prompt
-      const event = new CustomEvent('showAuthModal');
-      window.dispatchEvent(event);
-      return;
-    }
-
+    const userId = favoritesService.getCurrentUserId();
     setIsAnimating(true);
     const newFavoriteState = !isFavorite;
-    
+
     if (newFavoriteState) {
-      favoritesService.addFavorite(user.id, cafe);
+      favoritesService.addFavorite(userId, cafe);
       createHeartBurst(e.currentTarget);
     } else {
-      favoritesService.removeFavorite(user.id, cafe.id);
+      favoritesService.removeFavorite(userId, cafe.id);
     }
 
     setIsFavorite(newFavoriteState);
-    
+
     setTimeout(() => setIsAnimating(false), 600);
   };
 

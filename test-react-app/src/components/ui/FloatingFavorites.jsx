@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import favoritesService from '../../services/favoritesService';
 import './FloatingFavorites.css';
 
 const FloatingFavorites = ({ onOpen }) => {
-  const { user } = useAuth();
   const [favoriteCount, setFavoriteCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    if (user) {
-      const favorites = JSON.parse(localStorage.getItem(`cafinder_favorites_${user.id}`) || '[]');
-      setFavoriteCount(favorites.length);
-    }
-  }, [user]);
+    // Favorites are stored under the anonymous local id (no account system yet)
+    const favorites = favoritesService.getFavorites(favoritesService.getCurrentUserId());
+    setFavoriteCount(favorites.length);
+  }, []);
 
   useEffect(() => {
     // Listen for favorite updates
@@ -28,8 +26,6 @@ const FloatingFavorites = ({ onOpen }) => {
     window.addEventListener('favoriteUpdated', handleFavoriteUpdate);
     return () => window.removeEventListener('favoriteUpdated', handleFavoriteUpdate);
   }, []);
-
-  if (!user) return null;
 
   const handleClick = () => {
     onOpen();

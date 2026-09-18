@@ -10,25 +10,24 @@
  */
 export const adaptCafeDataForSinglePage = (cafeData) => {
   if (!cafeData) return null;
-  
+
   // Extract features from additionalInfo
   const features = extractFeatures(cafeData.additionalInfo);
-  
-  
+
   // No dummy reviews - use empty array
   const reviews = [];
-  
-  // Format images (use the main image + generate placeholders)
+
+  // Only real images: the cafe's own photo when we have one, otherwise none
   const images = generateImages(cafeData);
-  
+
   return {
     id: cafeData.id,
     name: cafeData.name,
     fullAddress: cafeData.address,
     google_maps_direction: cafeData.google_maps_direction, // Preserve the original google_maps_direction field
     coordinates: {
-      lat: 0, // These would need to be parsed from Google Maps data or provided
-      lng: 0
+      lat: Array.isArray(cafeData.coordinates) ? cafeData.coordinates[0] : null,
+      lng: Array.isArray(cafeData.coordinates) ? cafeData.coordinates[1] : null
     },
     phone: cafeData.phone,
     website: cafeData.website,
@@ -41,30 +40,48 @@ export const adaptCafeDataForSinglePage = (cafeData) => {
         facebook: cafeData.website && cafeData.website.includes('facebook.com') ? cafeData.website : null
       }
     },
-    rating: parseFloat(cafeData.rating) || 0,
-    totalReviews: cafeData.reviewCount || 0,
-    priceRange: "$$", // Default since it's not in the original data
+    rating: cafeData.rating != null ? parseFloat(cafeData.rating) : null,
+    totalReviews: cafeData.reviewCount != null ? Number(cafeData.reviewCount) : null,
+    priceRange: null, // Not present in the source data
     images: images,
     tags: extractTags(cafeData),
     description: generateDescription(cafeData),
     aboutDetails: generateAboutDetails(cafeData),
     features: features,
-    openingHours: cafeData.openingHours, // Use original data directly
+    openingHours: normalizeOpeningHours(cafeData.openingHours),
     ratings: {
-      overall: parseFloat(cafeData.rating) || 0,
-      categories: {
-        coffee: parseFloat(cafeData.rating) || 0,
-        food: parseFloat(cafeData.rating) - 0.2 || 0,
-        atmosphere: parseFloat(cafeData.rating) + 0.1 || 0,
-        service: parseFloat(cafeData.rating) - 0.1 || 0,
-        value: parseFloat(cafeData.rating) - 0.3 || 0,
-        wifi: parseFloat(cafeData.rating) || 0
-      }
+      overall: cafeData.rating != null ? parseFloat(cafeData.rating) : null,
+      categories: null // Per-category ratings are not present in the source data
     },
     reviews: reviews,
     nearbyAttractions: [],
-    popularTimes: generatePopularTimes()
+    popularTimes: null // Not present in the source data
   };
+};
+
+/**
+ * Normalize raw openingHours into a flat [{day, hours}] array of strings.
+ * Handles the nested {day, hours:{day, hours}} shape, flat {day, hours},
+ * plain string entries and missing/empty input.
+ */
+export const normalizeOpeningHours = (rawHours) => {
+  if (!Array.isArray(rawHours)) return [];
+
+  return rawHours
+    .map(entry => {
+      if (typeof entry === 'string') return { day: null, hours: entry };
+      if (!entry || typeof entry !== 'object') return null;
+      let hours = entry.hours;
+      // Nested shape: {day:"Monday", hours:{day:"Monday", hours:"4 PM to 10 PM"}}
+      if (hours && typeof hours === 'object') {
+        hours = hours.hours;
+      }
+      return {
+        day: entry.day || (hours && typeof hours === 'object' ? hours.day : null),
+        hours: typeof hours === 'string' ? hours : null
+      };
+    })
+    .filter(entry => entry && entry.hours);
 };
 
 /**
@@ -91,18 +108,8 @@ const extractFeatures = (additionalInfo) => {
       });
     }
   });
-  
-  // Add additional common features
-  if (features.indexOf("WiFi") === -1 && features.indexOf("Free WiFi") === -1) {
-    features.push("Free WiFi");
-  }
-  
-  if (features.indexOf("Power Outlets") === -1 && 
-      features.indexOf("Good for working on laptop") !== -1) {
-    features.push("Power Outlets");
-  }
-  
-  return [...new Set(features)]; // Remove duplicates
+
+  return [...new Set(features)]; // Remove duplicates — real data only, nothing force-added
 };
 
 
@@ -110,43 +117,19 @@ const extractFeatures = (additionalInfo) => {
 
 
 /**
- * Generate images for the cafe
+ * Build the image list from real data only: the cafe's own photo when we
+ * have one, otherwise an empty array (UI shows a placeholder).
  */
 const generateImages = (cafeData) => {
-  if (!cafeData) return [];
-  
-  const mainImage = {
-    id: 1,
-    url: cafeData.imageUrl,
-    caption: "Main view"
-  };
-  
-  // Generate additional image URLs using the cafe name as a seed
-  const encodedName = encodeURIComponent(cafeData.name);
-  const additionalImages = [
+  if (!cafeData || !cafeData.imageUrl) return [];
+
+  return [
     {
-      id: 2,
-      url: `https://picsum.photos/seed/${encodedName}-interior/800/600`,
-      caption: "Interior"
-    },
-    {
-      id: 3,
-      url: `https://picsum.photos/seed/${encodedName}-coffee/800/600`,
-      caption: "Coffee selection"
-    },
-    {
-      id: 4,
-      url: `https://picsum.photos/seed/${encodedName}-ambience/800/600`,
-      caption: "Ambience"
-    },
-    {
-      id: 5,
-      url: `https://picsum.photos/seed/${encodedName}-food/800/600`,
-      caption: "Food & drinks"
+      id: 1,
+      url: cafeData.imageUrl,
+      caption: "Foto utama"
     }
   ];
-  
-  return [mainImage, ...additionalImages];
 };
 
 /**
@@ -275,29 +258,7 @@ const generateAboutDetails = (cafeData) => {
       "Selain kopi, kafe ini juga menawarkan berbagai pilihan pastry, cake, dan makanan ringan." :
       "Menu minuman di kafe ini sangat beragam dan diolah dengan bahan-bahan berkualitas."} 
       ${cafeData.additionalInfo?.["Popular for"]?.some(item => item["Good for working on laptop"]) ?
-        "Koneksi internet cepat dan stabil serta banyaknya colokan listrik menjadikan tempat ini pilihan utama untuk remote working." :
-        "Tempatnya yang nyaman menjadikan kafe ini pilihan ideal untuk bersantai atau berkumpul dengan teman-teman."}`,
-    
-    "Staf yang ramah dan profesional siap memberikan rekomendasi menu sesuai dengan preferensi pelanggan, menjadikan setiap kunjungan menjadi pengalaman yang personal dan menyenangkan."
+        "Kafe ini tercatat sebagai tempat yang cocok untuk bekerja dengan laptop." :
+        "Tempatnya yang nyaman menjadikan kafe ini pilihan ideal untuk bersantai atau berkumpul dengan teman-teman."}`
   ];
-};
-
-/**
- * Generate popular times data
- */
-const generatePopularTimes = () => {
-  return {
-    weekday: {
-      morning: "medium", // 7-11
-      midday: "high",    // 11-2
-      afternoon: "medium", // 2-5
-      evening: "high"    // 5-9
-    },
-    weekend: {
-      morning: "low",    // 7-11
-      midday: "high",    // 11-2
-      afternoon: "high", // 2-5
-      evening: "high"    // 5-9
-    }
-  };
 };

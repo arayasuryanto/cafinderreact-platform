@@ -6,49 +6,84 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CafeDiscoveryMap = ({ navigateTo }) => {
   const [selectedRegion, setSelectedRegion] = useState('pusat');
+  // Runtime cafe counts per region from the same data the map page uses
+  const [regionCounts, setRegionCounts] = useState(null);
+  const [countsError, setCountsError] = useState(false);
+
+  // Region keys used by this widget -> region values in filtered_cafes.json
+  const DATA_REGION = {
+    pusat: 'SBY Pusat',
+    timur: 'SBY Timur',
+    barat: 'SBY Barat',
+    utara: 'SBY Utara',
+    selatan: 'SBY Selatan'
+  };
 
   const regions = {
-    pusat: { 
-      name: 'Pusat', 
-      cafes: 45, 
+    pusat: {
+      name: 'Pusat',
       color: '#F05438',
       description: 'Heritage & Modern',
       popularCafes: ['Zangrandi', 'Calibre Coffee'],
       shortCafe: 'Zangrandi'
     },
-    timur: { 
-      name: 'Timur', 
-      cafes: 38, 
+    timur: {
+      name: 'Timur',
       color: '#3B82F6',
       description: 'Student Friendly',
       popularCafes: ['TECO Coffee', 'Casa Coffee'],
       shortCafe: 'TECO Coffee'
     },
-    barat: { 
-      name: 'Barat', 
-      cafes: 52, 
+    barat: {
+      name: 'Barat',
       color: '#10B981',
       description: 'Premium & Golf',
       popularCafes: ['Redback', 'Gatherinc'],
       shortCafe: 'Redback'
     },
-    utara: { 
-      name: 'Utara', 
-      cafes: 29, 
+    utara: {
+      name: 'Utara',
       color: '#8B5CF6',
       description: 'Riverside & Historic',
       popularCafes: ['Petekan', "D'Kalimas"],
       shortCafe: 'Petekan'
     },
-    selatan: { 
-      name: 'Selatan', 
-      cafes: 41, 
+    selatan: {
+      name: 'Selatan',
       color: '#F59E0B',
       description: 'Rooftop & Aesthetic',
       popularCafes: ['KUNI', 'Scrt Coffee'],
       shortCafe: 'KUNI'
     }
   };
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/filtered_cafes.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (cancelled) return;
+        // Same validity check as the map page: only cafes with usable coordinates
+        const counts = {};
+        data.forEach(cafe => {
+          const hasCoords = cafe.coordinates && Array.isArray(cafe.coordinates) && cafe.coordinates.length === 2;
+          if (!hasCoords) return;
+          counts[cafe.region] = (counts[cafe.region] || 0) + 1;
+        });
+        setRegionCounts(counts);
+      })
+      .catch(() => {
+        if (!cancelled) setCountsError(true);
+      });
+    return () => { cancelled = true; };
+  }, []);
+
+  const selectedCount = regionCounts ? (regionCounts[DATA_REGION[selectedRegion]] || 0) : null;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -140,9 +175,9 @@ const CafeDiscoveryMap = ({ navigateTo }) => {
 
             {/* CTA Button */}
             <div className="discovery-cta">
-              <button onClick={() => navigateTo('/regional-exploration')} className="explore-all-btn">
+              <button onClick={() => navigateTo('/map')} className="explore-all-btn">
                 <span className="btn-icon">🚀</span>
-                <span className="btn-text">Explore Semua Area</span>
+                <span className="btn-text">Jelajahi Semua Cafe</span>
                 <span className="btn-arrow">→</span>
               </button>
             </div>
@@ -260,7 +295,11 @@ const CafeDiscoveryMap = ({ navigateTo }) => {
               <div className="map-info">
                 <div className="selected-region">
                   <h4>{regions[selectedRegion].name}</h4>
-                  <p>{regions[selectedRegion].cafes} cafe tersedia</p>
+                  <p>
+                    {selectedCount === null
+                      ? (countsError ? 'Jumlah cafe belum tersedia' : 'Memuat data cafe...')
+                      : `${selectedCount} cafe tersedia`}
+                  </p>
                 </div>
               </div>
             </div>

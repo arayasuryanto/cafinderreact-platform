@@ -183,3 +183,26 @@
     height: 40px;
   }
 }
+/* Contact CTA (replaces the old Google sign-in button) */
+.auth-modal-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #F05438;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.auth-modal-cta:hover {
+  opacity: 0.9;
+}

@@ -31,17 +31,32 @@ const CafeCard = ({ cafe, onViewCafe }) => {
   };
   
   // Get the right image source - cafe data structure might differ
+  const PLACEHOLDER_IMAGE = '/images/placeholder-cafe.svg';
+
   const getImageSource = () => {
+    let url = null;
     if (cafe.images && cafe.images.length > 0) {
-      return cafe.images[0].url;
+      url = cafe.images[0].url;
     } else if (cafe.image) {
-      return cafe.image;
+      url = cafe.image;
     } else if (cafe.imageUrl) {
-      return cafe.imageUrl;
+      url = cafe.imageUrl;
     }
-    return 'https://via.placeholder.com/400x300?text=No+Image'; // Fallback image
+    if (!url) return PLACEHOLDER_IMAGE;
+    // Request a thumbnail-sized version from Google's image CDN
+    return url.includes('googleusercontent')
+      ? url.replace(/=w\d+-h\d+.*$/, '=w400-h300-k-no')
+      : url;
   };
-  
+
+  const handleImageError = (e) => {
+    const img = e.currentTarget;
+    if (img.src !== PLACEHOLDER_IMAGE) {
+      img.src = PLACEHOLDER_IMAGE;
+    }
+    img.onerror = null;
+  };
+
   // Get address - different formats might be available
   const getAddress = () => {
     if (cafe.fullAddress) {
@@ -52,40 +67,63 @@ const CafeCard = ({ cafe, onViewCafe }) => {
     return `${cafe.neighborhood || ''}, ${cafe.city || 'Surabaya'}`;
   };
 
-  // Get current opening hours
+  // Convert "4 PM to 10 PM" style hours to "16.00–22.00" (Indonesian convention)
+  const formatHours = (hoursText) => {
+    if (!hoursText) return null;
+    const match = hoursText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*(?:to|-|–)\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+    if (!match) return hoursText;
+    const to24 = (h, ap) => {
+      let hour = parseInt(h, 10) % 12;
+      if (ap.toUpperCase() === 'PM') hour += 12;
+      return `${String(hour).padStart(2, '0')}.00`;
+    };
+    return `${to24(match[1], match[3])}–${to24(match[4], match[6])}`;
+  };
+
+  // Get current opening hours (data nests hours as {day, hours: {day, hours: "..."}})
   const getCurrentHours = () => {
     if (!cafe.openingHours || cafe.openingHours.length === 0) {
       return null;
     }
-    
+
     const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
     const todayHours = cafe.openingHours.find(day => day.day === today);
-    
-    if (todayHours && todayHours.hours && todayHours.hours.hours) {
-      return todayHours.hours.hours;
+
+    if (todayHours && todayHours.hours) {
+      const raw = typeof todayHours.hours === 'string'
+        ? todayHours.hours
+        : todayHours.hours.hours;
+      return formatHours(raw);
     }
     return null;
   };
 
-  
+
   return (
     <div className="cafe-catalog-card" ref={cardRef}>
-      <div 
-        className="cafe-catalog-img" 
-        style={{ backgroundImage: `url(${getImageSource()})` }}
+      <div
+        className="cafe-catalog-img"
         onClick={handleViewCafe}
       >
-        <div className="cafe-price-tag">{cafe.priceRange || "$$"}</div>
+        <img
+          className="cafe-catalog-img-el"
+          src={getImageSource()}
+          alt={cafe.name}
+          loading="lazy"
+          onError={handleImageError}
+        />
         <FavoriteButton cafe={cafe} size="medium" />
-        <div className="cafe-rating">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFC107"/>
-          </svg>
-          <span>{cafe.rating || "0"}</span>
-          {(cafe.totalReviews || cafe.reviewCount) > 0 && (
-            <small className="review-count">({cafe.totalReviews || cafe.reviewCount})</small>
-          )}
-        </div>
+        {cafe.rating && (
+          <div className="cafe-rating">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFC107"/>
+            </svg>
+            <span>{cafe.rating}</span>
+            {(cafe.totalReviews || cafe.reviewCount) > 0 && (
+              <small className="review-count">({cafe.totalReviews || cafe.reviewCount})</small>
+            )}
+          </div>
+        )}
       </div>
       <div className="cafe-catalog-details">
         <h3 className="cafe-catalog-name" onClick={handleViewCafe}>{cafe.name}</h3>
@@ -102,7 +140,7 @@ const CafeCard = ({ cafe, onViewCafe }) => {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z" fill="#6C757D"/>
           </svg>
-          <span>{getCurrentHours() || "Hours not available"}</span>
+          <span>{getCurrentHours() || "Jam belum tersedia"}</span>
         </div>
 
         {/* Contact Info */}
@@ -127,7 +165,7 @@ const CafeCard = ({ cafe, onViewCafe }) => {
           
           {!cafe.phone && !cafe.website && (
             <div className="contact-item">
-              <span>Contact info not available</span>
+              <span>Kontak belum tersedia</span>
             </div>
           )}
         </div>
@@ -135,7 +173,9 @@ const CafeCard = ({ cafe, onViewCafe }) => {
 
         {/* Fixed height container for description and button */}
         <div className="cafe-content-container">
-          <p className="cafe-catalog-desc">{cafe.description || "No description available"}</p>
+          {cafe.description && (
+            <p className="cafe-catalog-desc">{cafe.description}</p>
+          )}
           <button className="view-cafe-btn" onClick={handleViewCafe}>Lihat Detail</button>
         </div>
       </div>

@@ -11,6 +11,9 @@ export function filterCafesByRegion(cafes, region) {
     if (region === 'Semua' || !region) {
         return cafes;
     }
+    if (region === 'Lainnya') {
+        return cafes.filter(cafe => !cafe.region || cafe.region === 'Unknown');
+    }
     return cafes.filter(cafe => cafe.region === region);
 }
 
@@ -26,16 +29,20 @@ export function getCafeCountsByRegion(cafes) {
         'SBY Selatan': 0,
         'SBY Barat': 0,
         'SBY Pusat': 0,
-        'SBY Utara': 0
+        'SBY Utara': 0,
+        'Lainnya': 0
     };
-    
+
     cafes.forEach(cafe => {
         const region = cafe.region;
         if (counts.hasOwnProperty(region)) {
             counts[region]++;
+        } else {
+            // Unknown / missing region cafes live in "Lainnya" so they stay reachable
+            counts['Lainnya']++;
         }
     });
-    
+
     return counts;
 }
 
@@ -79,12 +86,19 @@ export const SURABAYA_REGIONS = [
         color: '#8b5cf6',
         districts: ['Tegalsari', 'Simokerto', 'Genteng', 'Bubutan']
     },
-    { 
-        key: 'SBY Utara', 
-        label: 'SBY Utara', 
+    {
+        key: 'SBY Utara',
+        label: 'SBY Utara',
         description: 'North Surabaya - Kenjeran, Bulak, port area, etc.',
         color: '#06b6d4',
         districts: ['Bulak', 'Kenjeran', 'Semampir', 'Pabean Cantian', 'Krembangan']
+    },
+    {
+        key: 'Lainnya',
+        label: 'Lainnya',
+        description: 'Cafe di luar wilayah resmi Surabaya atau wilayah belum terpetakan',
+        color: '#94a3b8',
+        districts: []
     }
 ];
 

@@ -1,5 +1,7 @@
 import React from 'react';
 
+const CONTACT_EMAIL = 'arayasuryanto@digital360.id';
+
 const Footer = () => {
   return (
     <footer>
@@ -7,47 +9,44 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-col">
             <div className="footer-logo">
-              <img 
-                src="/images/cafinder-logo.png" 
-                alt="Cafinder Logo" 
+              <img
+                src="/images/cafinder-logo.png"
+                alt="Cafinder Logo"
                 style={{ height: '40px', width: 'auto' }}
               />
             </div>
             <p className="footer-desc">Temukan wawasan dan rekomendasi untuk meningkatkan pengalaman cafe Anda di Surabaya dan sekitarnya.</p>
           </div>
-          
+
           <div className="footer-col">
             <h3 className="footer-heading">Menu</h3>
             <ul className="footer-links">
-              <li><a href="/cafemap">Cafe Map</a></li>
+              <li><a href="/map">Peta Cafe</a></li>
               <li><a href="/catalog">Katalog Cafe</a></li>
-              <li><a href="/burndown-chart">Burndown Chart</a></li>
             </ul>
           </div>
-          
+
           <div className="footer-col">
-            <h3 className="footer-heading">Feature</h3>
+            <h3 className="footer-heading">Fitur</h3>
             <ul className="footer-links">
               <li><a href="/finder">Smart Finder</a></li>
-              <li><a href="/about">Tentang Kami</a></li>
+              <li><a href="/tentang-kami">Tentang Kami</a></li>
             </ul>
           </div>
-          
+
           <div className="footer-col">
-            <h3 className="footer-heading">Join Our Community</h3>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Enter your email..." />
-              <button>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 20V4H20V20H4ZM12 13L20 8V6L12 11L4 6V8L12 13Z" fill="white"/>
-                </svg>
-              </button>
-            </div>
+            <h3 className="footer-heading">Hubungi Kami</h3>
+            <p className="footer-desc">
+              Punya masukan atau mau cafe kamu tampil di Cafinder?
+            </p>
+            <a className="footer-contact-link" href={`mailto:${CONTACT_EMAIL}?subject=Cafinder%20-%20Halo`}>
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
-          <p>Made with ❤️ by Cafinder Teams</p>
+          <p>Dibuat dengan ❤️ oleh Cafinder</p>
         </div>
       </div>
     </footer>

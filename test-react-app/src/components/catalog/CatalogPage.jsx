@@ -117,17 +117,17 @@ const CatalogPage = ({ onViewCafe }) => {
     <div className="catalog-page">
       <div className="catalog-hero">
         <div className="container">
-          <h1 ref={headerRef}>Katalog Café</h1>
-          <p ref={subheaderRef}>Temukan café favoritmu di Surabaya berdasarkan wilayah dan kebutuhanmu</p>
+          <h1 ref={headerRef}>Katalog Cafe</h1>
+          <p ref={subheaderRef}>Temukan cafe favoritmu di Surabaya berdasarkan wilayah dan kebutuhanmu</p>
           
           <div className="search-container" ref={searchRef}>
             <div className="search-input-wrapper">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="#6C757D"/>
               </svg>
-              <input 
-                type="text" 
-                placeholder="Cari nama café, tag, atau deskripsi..." 
+              <input
+                type="text"
+                placeholder="Cari nama cafe, tag, atau deskripsi..."
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
@@ -156,12 +156,13 @@ const CatalogPage = ({ onViewCafe }) => {
         {isLoading ? (
           <div className="loading-container">
             <div className="loader"></div>
-            <p>Loading cafes...</p>
+            <p>Memuat cafe...</p>
           </div>
         ) : (
           <>
-            <CafeList 
-              cafes={displayedCafes} 
+            <CafeList
+              cafes={displayedCafes}
+              totalCount={filteredCafes.length}
               region={selectedRegion}
               onViewCafe={onViewCafe}
             />
@@ -173,7 +174,7 @@ const CatalogPage = ({ onViewCafe }) => {
                   className="load-more-btn"
                   onClick={handleLoadMore}
                 >
-                  Load More Cafes
+                  Muat Lebih Banyak
                 </button>
               </div>
             )}
@@ -181,9 +182,9 @@ const CatalogPage = ({ onViewCafe }) => {
             {/* Results info */}
             <div className="results-info">
               <p>
-                Showing {displayedCafes.length} of {filteredCafes.length} cafes
-                {searchTerm && ` for "${searchTerm}"`}
-                {selectedRegion !== "Semua" && ` in ${selectedRegion}`}
+                Menampilkan {displayedCafes.length} dari {filteredCafes.length} cafe
+                {searchTerm && ` untuk "${searchTerm}"`}
+                {selectedRegion !== "Semua" && ` di ${selectedRegion}`}
               </p>
             </div>
           </>

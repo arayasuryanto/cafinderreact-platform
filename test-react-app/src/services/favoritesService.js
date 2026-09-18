@@ -1,3 +1,5 @@
+const LOCAL_USER_ID_KEY = 'cafinder_local_user_id';
+
 class FavoritesService {
   constructor() {
     this.storageKey = 'cafinder_favorites';
@@ -10,6 +12,55 @@ class FavoritesService {
 
   getAchievementsKey(userId) {
     return `${this.achievementsKey}_${userId}`;
+  }
+
+  // Stable anonymous id used when no signed-in user exists,
+  // so favorites saved while signed out still persist locally.
+  getLocalUserId() {
+    try {
+      let localId = localStorage.getItem(LOCAL_USER_ID_KEY);
+      if (!localId) {
+        localId = `local-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+        localStorage.setItem(LOCAL_USER_ID_KEY, localId);
+      }
+      return localId;
+    } catch (error) {
+      return 'local-guest';
+    }
+  }
+
+  // Resolve the id favorites should be stored under. Cafinder has no account
+  // system yet, so this is always the stable anonymous local id.
+  getCurrentUserId() {
+    return this.getLocalUserId();
+  }
+
+  // Merge favorites saved under the anonymous local id into the signed-in
+  // user's list, then clean up the anonymous data. Safe to call repeatedly.
+  migrateLocalFavorites(userId) {
+    try {
+      const localId = localStorage.getItem(LOCAL_USER_ID_KEY);
+      if (!localId || localId === userId) return;
+
+      const localFavorites = this.getFavorites(localId);
+      if (localFavorites.length > 0) {
+        const favorites = this.getFavorites(userId);
+        const existingIds = new Set(favorites.map(fav => fav.cafeId));
+        localFavorites.forEach(fav => {
+          if (!existingIds.has(fav.cafeId)) {
+            favorites.push(fav);
+          }
+        });
+        localStorage.setItem(this.getFavoritesKey(userId), JSON.stringify(favorites));
+        this.dispatchFavoriteEvent(favorites.length);
+      }
+
+      localStorage.removeItem(this.getFavoritesKey(localId));
+      localStorage.removeItem(this.getAchievementsKey(localId));
+      localStorage.removeItem(LOCAL_USER_ID_KEY);
+    } catch (error) {
+      // Migration is best-effort; never block the caller on it
+    }
   }
 
   // Get all favorites for a user

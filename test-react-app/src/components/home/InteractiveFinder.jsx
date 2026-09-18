@@ -130,7 +130,7 @@ const InteractiveFinder = ({ navigateTo }) => {
             from: "random"
           },
           scrollTrigger: {
-            trigger: '.needs-grid',
+            trigger: '.needs-grid-container',
             start: 'top 80%'
           }
         }

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
 import favoritesService from '../../services/favoritesService';
 import './UserDashboard.css';
 
 const UserDashboard = ({ onClose, onViewCafe }) => {
-  const { user } = useAuth();
   const [activeTab, setActiveTab] = useState('favorites');
   const [favorites, setFavorites] = useState([]);
   const [stats, setStats] = useState(null);
@@ -12,29 +10,30 @@ const UserDashboard = ({ onClose, onViewCafe }) => {
   const [sortBy, setSortBy] = useState('recent');
 
   useEffect(() => {
-    if (user) {
-      loadUserData();
-    }
-  }, [user, sortBy]);
+    loadUserData();
+  }, [sortBy]);
 
   const loadUserData = () => {
+    // Favorites live under the anonymous local id (no account system yet)
+    const userId = favoritesService.getCurrentUserId();
+
     // Load favorites with sorting
-    const userFavorites = favoritesService.getFilteredFavorites(user.id, { sortBy });
+    const userFavorites = favoritesService.getFilteredFavorites(userId, { sortBy });
     setFavorites(userFavorites);
 
     // Load stats
-    const userStats = favoritesService.getFavoriteStats(user.id);
+    const userStats = favoritesService.getFavoriteStats(userId);
     setStats(userStats);
 
     // Load achievements
     const userAchievements = JSON.parse(
-      localStorage.getItem(`cafinder_achievements_${user.id}`) || '[]'
+      localStorage.getItem(`cafinder_achievements_${userId}`) || '[]'
     );
     setAchievements(userAchievements);
   };
 
   const handleRemoveFavorite = (cafeId) => {
-    favoritesService.removeFavorite(user.id, cafeId);
+    favoritesService.removeFavorite(favoritesService.getCurrentUserId(), cafeId);
     loadUserData();
   };
 
@@ -63,9 +62,9 @@ const UserDashboard = ({ onClose, onViewCafe }) => {
         <button className="dashboard-close" onClick={onClose}>×</button>
         
         <div className="dashboard-header">
-          <img src={user.picture} alt={user.name} className="dashboard-avatar" />
+          <img src="/images/default-avatar.svg" alt="Pengguna Cafinder" className="dashboard-avatar" />
           <div className="dashboard-user-info">
-            <h2>{user.name}</h2>
+            <h2>Pengguna Cafinder</h2>
             <p className="user-tagline">Cafe Explorer Level {Math.floor((stats?.totalFavorites || 0) / 5) + 1}</p>
           </div>
         </div>

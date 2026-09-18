@@ -718,3 +718,16 @@
   border-top-color: white;
   animation: spin 1s linear infinite;
 }
+
+/* Real <img> inside the card photo slot (with branded fallback on error) */
+.cafe-catalog-img {
+  position: relative;
+  overflow: hidden;
+}
+.cafe-catalog-img-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

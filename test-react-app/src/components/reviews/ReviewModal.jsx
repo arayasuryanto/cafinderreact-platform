@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
 import reviewService from '../../services/reviewService';
 import './ReviewModal.css';
 
+// Reviews post anonymously (Firebase anonymous auth happens in reviewService).
+// A persistent local id keeps "my reviews" coherent without an account system.
+const getAnonymousId = () => {
+  const KEY = 'cafinder_anon_id';
+  let id = null;
+  try {
+    id = localStorage.getItem(KEY);
+  } catch (e) { /* private mode */ }
+  if (!id) {
+    id = 'anon-' + Math.random().toString(36).slice(2, 10);
+    try { localStorage.setItem(KEY, id); } catch (e) { /* ignore */ }
+  }
+  return id;
+};
+
 const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
-  const { user } = useAuth();
   const [rating, setRating] = useState(5);
+  const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -14,11 +28,6 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!user) {
-      setError('Silakan login terlebih dahulu');
-      return;
-    }
 
     if (!comment.trim()) {
       setError('Mohon tulis review Anda');
@@ -30,24 +39,25 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
 
     try {
       const reviewData = {
-        userName: user.name,
-        userPhoto: user.picture,
+        userName: name.trim() || 'Pengguna Cafinder',
+        userPhoto: null,
         rating,
         comment: comment.trim(),
         visitDate: new Date().toISOString()
       };
 
-      await reviewService.addReview(cafe.id, user.id, reviewData);
-      
+      await reviewService.addReview(cafe.id, getAnonymousId(), reviewData);
+
       // Reset form
       setRating(5);
+      setName('');
       setComment('');
-      
+
       // Notify parent component
       if (onReviewSubmitted) {
         onReviewSubmitted();
       }
-      
+
       onClose();
     } catch (error) {
       console.error('Error submitting review:', error);
@@ -66,8 +76,8 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
   return (
     <div className="review-modal-overlay" onClick={handleOverlayClick}>
       <div className="review-modal">
-        <button 
-          className="review-modal-close" 
+        <button
+          className="review-modal-close"
           onClick={onClose}
           disabled={isSubmitting}
         >
@@ -76,7 +86,7 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
 
         <div className="review-modal-header">
           <h2>Review {cafe.name}</h2>
-          <p className="cafe-location">{cafe.address}</p>
+          {cafe.fullAddress && <p className="cafe-location">{cafe.fullAddress}</p>}
         </div>
 
         <form onSubmit={handleSubmit} className="review-form">
@@ -99,6 +109,19 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
           </div>
 
           <div className="comment-section">
+            <label htmlFor="reviewer-name">Nama (opsional)</label>
+            <input
+              id="reviewer-name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Boleh pakai nama atau kosongkan"
+              maxLength={50}
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="comment-section">
             <label htmlFor="comment">Bagaimana pengalaman Anda?</label>
             <textarea
               id="comment"
@@ -117,16 +140,16 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
           )}
 
           <div className="review-actions">
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="cancel-btn"
               onClick={onClose}
               disabled={isSubmitting}
             >
               Batal
             </button>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="submit-btn"
               disabled={isSubmitting}
             >
@@ -134,13 +157,6 @@ const ReviewModal = ({ isOpen, onClose, cafe, onReviewSubmitted }) => {
             </button>
           </div>
         </form>
-
-        {user && (
-          <div className="review-author-preview">
-            <img src={user.picture} alt={user.name} />
-            <span>{user.name}</span>
-          </div>
-        )}
       </div>
     </div>
   );

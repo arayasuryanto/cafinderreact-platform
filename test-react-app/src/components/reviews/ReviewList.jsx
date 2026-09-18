@@ -85,7 +85,7 @@ const ReviewList = ({ cafeId }) => {
               <div className="review-header">
                 <div className="reviewer-info">
                   <img 
-                    src={review.userPhoto || '/images/default-avatar.png'} 
+                    src={review.userPhoto || '/images/default-avatar.svg'} 
                     alt={review.userName}
                     className="reviewer-avatar"
                   />

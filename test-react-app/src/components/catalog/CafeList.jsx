@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import CafeCard from './CafeCard';
 
-const CafeList = ({ cafes, region, onViewCafe }) => {
+const CafeList = ({ cafes, totalCount, region, onViewCafe }) => {
   const listRef = useRef(null);
   
   useEffect(() => {
@@ -28,14 +28,18 @@ const CafeList = ({ cafes, region, onViewCafe }) => {
   }, [region]);
   
   const getRegionDisplayName = (region) => {
-    if (region === "all") return "Semua Lokasi";
+    if (region === "all" || region === "Semua") return "Semua Wilayah";
     return region;
   };
+
+  const total = totalCount || cafes.length;
 
   return (
     <div className="cafe-list-container" ref={listRef}>
       <h2 className="cafe-list-heading">
-        {cafes.length} Cafe di {getRegionDisplayName(region)}
+        {cafes.length < total
+          ? `Menampilkan ${cafes.length} dari ${total} Cafe di ${getRegionDisplayName(region)}`
+          : `${total} Cafe di ${getRegionDisplayName(region)}`}
       </h2>
       
       {cafes.length === 0 ? (

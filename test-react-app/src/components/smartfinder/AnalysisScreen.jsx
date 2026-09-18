@@ -113,13 +113,13 @@ const AnalysisScreen = ({ analysis, onContinue }) => {
         
         {!analysis ? (
           <>
-            <h2 className="analysis-title">Menganalisis preferensi Anda...</h2>
+            <h2 className="analysis-title">Menganalisis jawaban Anda...</h2>
             <div className="loading-dots">
               <span className="loading-dot">•</span>
               <span className="loading-dot">•</span>
               <span className="loading-dot">•</span>
             </div>
-            <p className="analysis-subtitle">AI kami sedang memproses jawaban Anda</p>
+            <p className="analysis-subtitle">Menyimpulkan tipe kafe yang cocok dari 6 jawaban Anda</p>
           </>
         ) : (
           <div className="analysis-result">

@@ -51,14 +51,8 @@ import CategoryRecommendationsPage from './components/recommendations/CategoryRe
 import NeedBasedRecommendations from './components/recommendations/NeedBasedRecommendations';
 import RegionalExplorationPage from './components/recommendations/RegionalExplorationPage';
 
-// Import Burndown Chart component
-import BurndownChartPage from './components/burndown/BurndownChartPage';
-
-// Import sample cafe data for fallback
-import singleCafeData from './data/singleCafeData';
-
 // Import cleaned cafes data utilities
-import { fetchCleanedCafesData, fetchCafeById } from './data/cleanedCafesData';
+import { fetchCafeById } from './data/cleanedCafesData';
 
 // Import data adapter utilities
 import { adaptCafeDataForSinglePage } from './utils/cafeDataAdapter';
@@ -66,210 +60,163 @@ import { adaptCafeDataForSinglePage } from './utils/cafeDataAdapter';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+const PAGE_TITLES = {
+  home: 'Cafinder - Temukan Spot Nongkrong Cepat',
+  catalog: 'Katalog Cafe Surabaya - Cafinder',
+  map: 'Peta Cafe Surabaya - Cafinder',
+  'tentang-kami': 'Tentang Kami - Cafinder',
+  'smart-finder': 'Smart Finder - Cafinder',
+  recommendations: 'Rekomendasi Cafe - Cafinder',
+  'need-based-recommendations': 'Rekomendasi Berdasarkan Kebutuhan - Cafinder',
+  'regional-exploration': 'Jelajahi Cafe per Wilayah - Cafinder',
+  'not-found': 'Halaman Tidak Ditemukan - Cafinder',
+};
+
+// Resolve a pathname to a page. Exact matches only; anything else is a 404.
+const resolveRoute = (path) => {
+  const cleanPath = path.split('?')[0].replace(/\/+$/, '') || '/';
+  const segments = cleanPath.split('/').filter(Boolean);
+
+  if (segments.length === 0) return { page: 'home' };
+  if (segments[0] === 'catalog' && segments.length === 1) return { page: 'catalog' };
+  if (segments[0] === 'catalog' && segments[1] === 'cafe' && segments[2]) {
+    return { page: 'cafe', cafeId: decodeURIComponent(segments[2]) };
+  }
+  if (segments[0] === 'map') return { page: 'map' };
+  if (segments[0] === 'tentang-kami' || segments[0] === 'about') return { page: 'tentang-kami' };
+  if (segments[0] === 'finder' || segments[0] === 'smart-finder') return { page: 'smart-finder' };
+  if (segments[0] === 'rekomendasi' || segments[0] === 'recommendations') return { page: 'recommendations' };
+  if (segments[0] === 'need-based-recommendations') return { page: 'need-based-recommendations' };
+  if (segments[0] === 'regional-exploration') return { page: 'regional-exploration' };
+  return { page: 'not-found' };
+};
+
+const setPageTitle = (page, cafe) => {
+  document.title = page === 'cafe' && cafe
+    ? `${cafe.name} - Cafinder`
+    : PAGE_TITLES[page] || PAGE_TITLES.home;
+};
+
+const NotFoundPage = ({ navigateTo }) => (
+  <div className="not-found-page">
+    <div className="container">
+      <h1>404</h1>
+      <h2>Halaman tidak ditemukan</h2>
+      <p>Alamat yang kamu tuju tidak ada atau sudah dipindahkan.</p>
+      <div className="not-found-actions">
+        <a href="/" className="not-found-link">Beranda</a>
+        <a href="/catalog" className="not-found-link">Lihat Katalog Cafe</a>
+      </div>
+    </div>
+  </div>
+);
+
 function App() {
-  // Use state to track current page and selected cafe
-  const [currentPage, setCurrentPage] = useState('home');
+  // Resolve the initial route synchronously so a deep link never flashes the homepage first
+  const [initialRoute] = useState(() => resolveRoute(window.location.pathname));
+  const [currentPage, setCurrentPage] = useState(initialRoute.page);
   const [selectedCafe, setSelectedCafe] = useState(null);
-  // State for storing cafe data
-  const [cafesData, setCafesData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   // State for dashboard
   const [showDashboard, setShowDashboard] = useState(false);
-  
-  // Fetch cafes data from cleaned_surabaya_cafes.json
+
+  // Set the initial document title
   useEffect(() => {
-    const loadCafesData = async () => {
-      setIsLoading(true);
-      try {
-        // Fetch the first 30 cafes for catalog display
-        const cleanedCafes = await fetchCleanedCafesData(30);
-        
-        // Transform the fetched data using our adapter
-        const transformedData = cleanedCafes.map(cafe => {
-          const adaptedCafe = adaptCafeDataForSinglePage(cafe);
-          // Make sure to preserve the original google_maps_direction
-          adaptedCafe.google_maps_direction = cafe.google_maps_direction;
-          return adaptedCafe;
-        });
-        setCafesData(transformedData);
-      } catch (error) {
-        console.error('Error loading cafes data:', error);
-        // Fallback to preview data if fetch fails
-        setCafesData([]);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    
-    loadCafesData();
-    
-    // Enable ScrollTrigger for all GSAP animations
-    ScrollTrigger.refresh();
-  }, []);
-  
-  // Listen for URL changes
-  useEffect(() => {
-    const handleUrlChange = async () => {
-      const path = window.location.pathname;
-      
-      if (path === '/' || path === '') {
-        setCurrentPage('home');
-        setSelectedCafe(null);
-      } else if (path.includes('/catalog/cafe/')) {
-        // Extract cafe ID from URL
-        const cafeId = path.split('/catalog/cafe/')[1];
-        setCurrentPage('cafe');
-        
-        // Try to find the cafe in already loaded data first
-        let cafeData = cafesData.find(cafe => cafe.id === cafeId);
-        
-        // If not found in loaded data, fetch it directly by ID
-        if (!cafeData) {
-          try {
-            const fetchedCafe = await fetchCafeById(cafeId);
-            if (fetchedCafe) {
-              cafeData = adaptCafeDataForSinglePage(fetchedCafe);
-              // Make sure to preserve the original google_maps_direction
-              cafeData.google_maps_direction = fetchedCafe.google_maps_direction;
-            }
-          } catch (error) {
-            console.error('Error fetching cafe by ID:', error);
-            // Fallback to original data for compatibility
-            cafeData = singleCafeData;
-          }
-        }
-        
+    setPageTitle(initialRoute.page);
+  }, [initialRoute]);
+
+  // Load a cafe by id (used by both direct URLs and in-app navigation)
+  const loadCafe = async (cafeId) => {
+    try {
+      const fetchedCafe = await fetchCafeById(cafeId);
+      if (fetchedCafe) {
+        const cafeData = adaptCafeDataForSinglePage(fetchedCafe);
+        cafeData.google_maps_direction = fetchedCafe.google_maps_direction;
         setSelectedCafe(cafeData);
-      } else if (path === '/catalog' || path.includes('catalog')) {
-        setCurrentPage('catalog');
+        setPageTitle('cafe', cafeData);
+      } else {
+        // Unknown cafe id -> honest 404, never a blank page or sample data
         setSelectedCafe(null);
-      } else if (path === '/map') {
-        setCurrentPage('map');
+        setCurrentPage('not-found');
+        setPageTitle('not-found');
+      }
+    } catch (error) {
+      setSelectedCafe(null);
+      setCurrentPage('not-found');
+      setPageTitle('not-found');
+    }
+  };
+
+  // Listen for URL changes (initial load + back/forward)
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const route = resolveRoute(window.location.pathname);
+      setCurrentPage(route.page);
+      setPageTitle(route.page);
+
+      if (route.page === 'cafe') {
         setSelectedCafe(null);
-      } else if (path === '/tentang-kami' || path === '/about') {
-        setCurrentPage('tentang-kami');
-        setSelectedCafe(null);
-      } else if (path === '/finder' || path === '/smart-finder') {
-        setCurrentPage('smart-finder');
-        setSelectedCafe(null);
-      } else if (path === '/rekomendasi' || path === '/recommendations') {
-        setCurrentPage('recommendations');
-        setSelectedCafe(null);
-      } else if (path === '/need-based-recommendations') {
-        setCurrentPage('need-based-recommendations');
-        setSelectedCafe(null);
-      } else if (path === '/regional-exploration') {
-        setCurrentPage('regional-exploration');
-        setSelectedCafe(null);
-      } else if (path === '/burndown-chart') {
-        setCurrentPage('burndown-chart');
+        loadCafe(route.cafeId);
+      } else {
         setSelectedCafe(null);
       }
+
+      window.scrollTo({ top: 0 });
     };
-    
-    // Initial check
+
     handleUrlChange();
-    
-    // Add event listener for popstate (back/forward button)
     window.addEventListener('popstate', handleUrlChange);
-    
+
     // Clean up ScrollTriggers on component unmount
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       window.removeEventListener('popstate', handleUrlChange);
     };
-  }, [cafesData]);
-  
+  }, []);
+
   // Custom navigation function
   const navigateTo = (path) => {
     window.history.pushState({}, '', path);
-    
-    // Scroll to top when navigating
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    if (path === '/' || path === '') {
-      setCurrentPage('home');
-      setSelectedCafe(null);
-    } else if (path.includes('/catalog/cafe/')) {
-      setCurrentPage('cafe');
-      // We handle cafe selection in the viewCafe function instead of here
-    } else if (path === '/catalog' || path.includes('catalog')) {
-      setCurrentPage('catalog');
-      setSelectedCafe(null);
-    } else if (path === '/map') {
-      setCurrentPage('map');
-      setSelectedCafe(null);
-    } else if (path === '/tentang-kami' || path === '/about') {
-      setCurrentPage('tentang-kami');
-      setSelectedCafe(null);
-    } else if (path === '/finder' || path === '/smart-finder') {
-      setCurrentPage('smart-finder');
-      setSelectedCafe(null);
-    } else if (path === '/rekomendasi' || path === '/recommendations') {
-      setCurrentPage('recommendations');
-      setSelectedCafe(null);
-    } else if (path === '/need-based-recommendations') {
-      setCurrentPage('need-based-recommendations');
-      setSelectedCafe(null);
-    } else if (path === '/regional-exploration') {
-      setCurrentPage('regional-exploration');
-      setSelectedCafe(null);
-    } else if (path === '/burndown-chart') {
-      setCurrentPage('burndown-chart');
+
+    const route = resolveRoute(path);
+    setCurrentPage(route.page);
+    setPageTitle(route.page);
+
+    if (route.page === 'cafe') {
+      // Cafe selection is handled in viewCafe / loadCafe
+      loadCafe(route.cafeId);
+    } else {
       setSelectedCafe(null);
     }
   };
-  
+
   // Function to view a specific cafe
-  const viewCafe = async (cafeId) => {
-    // First try to find the cafe in our already loaded data
-    let selectedCafeData = cafesData.find(cafe => cafe.id === cafeId);
-    
-    // If not found, fetch it directly
-    if (!selectedCafeData) {
-      try {
-        const fetchedCafe = await fetchCafeById(cafeId);
-        if (fetchedCafe) {
-          selectedCafeData = adaptCafeDataForSinglePage(fetchedCafe);
-          // Make sure to preserve the original google_maps_direction
-          selectedCafeData.google_maps_direction = fetchedCafe.google_maps_direction;
-        } else {
-          // Fallback to original sample data if fetch fails
-          selectedCafeData = singleCafeData;
-        }
-      } catch (error) {
-        console.error('Error fetching cafe data:', error);
-        selectedCafeData = singleCafeData;
-      }
-    }
-    
-    // Set the selected cafe for viewing
-    setSelectedCafe(selectedCafeData);
+  const viewCafe = (cafeId) => {
     navigateTo(`/catalog/cafe/${cafeId}`);
   };
-  
+
   // Function to go back to catalog
   const backToCatalog = () => {
     navigateTo('/catalog');
   };
-  
+
   // Override Header and Footer link clicks with custom navigation
   useEffect(() => {
     const handleLinkClick = (e) => {
       const link = e.target.closest('a');
-      if (link && link.getAttribute('href').startsWith('/')) {
+      if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('/')) {
         e.preventDefault();
         navigateTo(link.getAttribute('href'));
       }
     };
-    
+
     document.addEventListener('click', handleLinkClick);
-    
+
     return () => {
       document.removeEventListener('click', handleLinkClick);
     };
   }, []);
-  
+
   // HomePage component
   const HomePage = () => (
     <>
@@ -281,38 +228,36 @@ function App() {
       <Testimonials />
     </>
   );
-  
+
   return (
     <AuthProvider>
       <div className="App">
         {/* Cursor follower */}
         <CursorFollower />
-        
+
         {/* Progress Bar */}
         <ProgressBar />
-        
+
         {/* Header */}
         <Header />
-        
+
         {/* Floating Favorites Button */}
         <FloatingFavorites onOpen={() => setShowDashboard(true)} />
-        
+
         {/* User Dashboard */}
         {showDashboard && (
-          <UserDashboard 
+          <UserDashboard
             onClose={() => setShowDashboard(false)}
             onViewCafe={viewCafe}
           />
         )}
-        
+
         {/* Main content */}
         <main>
           {currentPage === 'home' && <HomePage />}
           {currentPage === 'catalog' && (
-            <CatalogPage 
-              cafes={cafesData} 
-              onViewCafe={viewCafe} 
-              isLoading={isLoading} 
+            <CatalogPage
+              onViewCafe={viewCafe}
             />
           )}
           {currentPage === 'cafe' && selectedCafe && (
@@ -336,11 +281,11 @@ function App() {
           {currentPage === 'regional-exploration' && (
             <RegionalExplorationPage />
           )}
-          {currentPage === 'burndown-chart' && (
-            <BurndownChartPage />
+          {currentPage === 'not-found' && (
+            <NotFoundPage navigateTo={navigateTo} />
           )}
         </main>
-        
+
         {/* Footer */}
         <Footer />
       </div>

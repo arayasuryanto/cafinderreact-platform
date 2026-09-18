@@ -1,116 +1,17 @@
-// This file is auto-generated. Do not edit manually.
+// This file is auto-generated from public/filtered_cafes.json. Do not edit manually.
+// Skips permanently-closed cafes and duplicate entries (same id).
+const activeCafes = (cafes) => {
+  const seen = new Set();
+  return cafes.filter(cafe => {
+    if (cafe.permanentlyClosed) return false;
+    const key = cafe.id || cafe.placeId;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
 export const cleanedCafesData = [
-  {
-    "id": "ChIJh9U5rh391y0R_D4KjkxgXrY",
-    "name": "Filgud+",
-    "address": "Jl. Raya Lidah Wetan, Lidah Wetan, Kec. Lakarsantri, Surabaya, Jawa Timur 60213, Indonesia",
-    "rating": "4.4",
-    "reviewCount": 329,
-    "placeId": "ChIJh9U5rh391y0R_D4KjkxgXrY",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=Filgud%2B&query_place_id=ChIJh9U5rh391y0R_D4KjkxgXrY",
-    "categories": [
-      "Cafe"
-    ],
-    "phone": null,
-    "website": null,
-    "openingHours": [],
-    "neighborhood": "Lidah Wetan, Lakarsantri",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npaZhDdvi5o5LOOOzbMEL8hHs4m7kD1HwrgySayMPU_sq9xynOyH7c942eSIfWIDv2nKS_xfKw242_InKMiX4WQjcXy3BCYp1ii3mj_nsmhKy86W4g3QjYRZB487BfOqeZqDL4evA=w408-h544-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "No-contact delivery": true
-        },
-        {
-          "Delivery": true
-        },
-        {
-          "Takeout": true
-        },
-        {
-          "Dine-in": true
-        }
-      ],
-      "Highlights": [
-        {
-          "Great coffee": true
-        },
-        {
-          "Great tea selection": true
-        }
-      ],
-      "Popular for": [
-        {
-          "Solo dining": true
-        },
-        {
-          "Good for working on laptop": true
-        }
-      ],
-      "Offerings": [
-        {
-          "Coffee": true
-        },
-        {
-          "Quick bite": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Dinner": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Restroom": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cozy": true
-        },
-        {
-          "Quiet": true
-        },
-        {
-          "Trendy": true
-        }
-      ],
-      "Crowd": [
-        {
-          "College students": true
-        },
-        {
-          "Groups": true
-        }
-      ],
-      "Children": [
-        {
-          "Good for kids": true
-        }
-      ]
-    },
-    "permanentlyClosed": true,
-    "lastUpdated": "2025-06-07T03:29:09.641Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Barat",
-    "coordinates": [
-      -7.3062831,
-      112.6624454
-    ],
-    "coordinatesSource": "known_accurate",
-    "coordinatesAccuracy": "high",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T19:22:54.809735",
-    "coordinates_source": "google_maps_manual",
-    "coordinates_verified": true,
-    "coordinates_estimated": true
-  },
   {
     "id": "ChIJTTM6WIf91y0RotZGcWHII0k",
     "name": "Ropopang Citraland",
@@ -129,49 +30,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       }
     ],
@@ -380,159 +281,6 @@ export const cleanedCafesData = [
     "coordinates_verified": true
   },
   {
-    "id": "ChIJYwLbGQD91y0R2pb1qgsh06s",
-    "name": "LoveBugsCafe",
-    "address": "Blk. CB, Jl. Citra Utama Lidah Kulon No.23, Lidah Kulon, Kec. Lakarsantri, Surabaya, Jawa Timur 60213, Indonesia",
-    "rating": "4.2",
-    "reviewCount": 174,
-    "placeId": "ChIJYwLbGQD91y0R2pb1qgsh06s",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=LoveBugsCafe&query_place_id=ChIJYwLbGQD91y0R2pb1qgsh06s",
-    "categories": [
-      "Cafe"
-    ],
-    "phone": "+62 812-3013-919",
-    "website": null,
-    "openingHours": [],
-    "neighborhood": "Lidah Kulon, Lakarsantri",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nokINTRUngNNurEXl72vJMvEkCCckf4Jr9L6aahlBC28lI-6R7hoah8O1V-W5k7S6mywtmxNHqU3aSM8cHrUhRc6OkDCC-rD3PRExp7RPUayXhz8NA8ddb4Bck4nIpAAeYyXEp9=w408-h302-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "Dine-in": true
-        },
-        {
-          "Delivery": false
-        }
-      ],
-      "Highlights": [
-        {
-          "Great coffee": true
-        },
-        {
-          "Great dessert": true
-        },
-        {
-          "Great tea selection": true
-        }
-      ],
-      "Popular for": [
-        {
-          "Lunch": true
-        },
-        {
-          "Dinner": true
-        },
-        {
-          "Solo dining": true
-        },
-        {
-          "Good for working on laptop": true
-        }
-      ],
-      "Accessibility": [
-        {
-          "Wheelchair accessible seating": false
-        }
-      ],
-      "Offerings": [
-        {
-          "Coffee": true
-        },
-        {
-          "Quick bite": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Lunch": true
-        },
-        {
-          "Dinner": true
-        },
-        {
-          "Dessert": true
-        },
-        {
-          "Seating": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Restroom": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cozy": true
-        },
-        {
-          "Trendy": true
-        }
-      ],
-      "Crowd": [
-        {
-          "College students": true
-        },
-        {
-          "Groups": true
-        },
-        {
-          "Tourists": true
-        }
-      ],
-      "Planning": [
-        {
-          "Accepts reservations": true
-        }
-      ],
-      "Payments": [
-        {
-          "Credit cards": true
-        }
-      ],
-      "Children": [
-        {
-          "Good for kids": true
-        },
-        {
-          "Kids' menu": true
-        }
-      ],
-      "Parking": [
-        {
-          "Free parking lot": true
-        },
-        {
-          "Free street parking": true
-        },
-        null
-      ]
-    },
-    "permanentlyClosed": true,
-    "lastUpdated": "2025-06-07T03:29:09.642Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Barat",
-    "coordinates": [
-      -7.3079921,
-      112.6578339
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T19:22:54.809762",
-    "coordinates_source": "google_maps_manual",
-    "coordinates_verified": true,
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJfVbuGoT91y0RNhWAjHd-e0o",
     "name": "Kopi teras",
     "address": "G-Walk, Citra Land, Jl. Niaga Gapura FG2 no. 1B-2, Lidah Kulon, Kec. Lakarsantri, Surabaya, Jawa Timur 60213, Indonesia",
@@ -550,49 +298,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       }
     ],
@@ -737,49 +485,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       }
     ],
@@ -927,7 +675,7 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
@@ -941,35 +689,35 @@ export const cleanedCafesData = [
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 3\u202fPM"
+          "hours": "7 AM to 3 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 3\u202fPM"
+          "hours": "7 AM to 3 PM"
         }
       }
     ],
@@ -1109,49 +857,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       }
     ],
@@ -1319,49 +1067,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -1529,49 +1277,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -1723,49 +1471,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -1929,49 +1677,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       }
     ],
@@ -2147,49 +1895,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       }
     ],
@@ -2366,49 +2114,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       }
     ],
@@ -2593,49 +2341,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       }
     ],
@@ -2769,49 +2517,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "2 to 11\u202fPM"
+          "hours": "2 to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "2 to 11\u202fPM"
+          "hours": "2 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       }
     ],
@@ -2976,49 +2724,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -3225,42 +2973,42 @@ export const cleanedCafesData = [
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -3461,49 +3209,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 7:30\u202fPM"
+          "hours": "8 AM to 7:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 7:30\u202fPM"
+          "hours": "8 AM to 7:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 7:30\u202fPM"
+          "hours": "8 AM to 7:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 7:30\u202fPM"
+          "hours": "8 AM to 7:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 7:30\u202fPM"
+          "hours": "8 AM to 7:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 7:30\u202fPM"
+          "hours": "8 AM to 7:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       }
     ],
@@ -3574,49 +3322,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       }
     ],
@@ -3807,49 +3555,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 9:30\u202fPM"
+          "hours": "9 AM to 9:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 9:30\u202fPM"
+          "hours": "9 AM to 9:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 9:30\u202fPM"
+          "hours": "9 AM to 9:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 9:30\u202fPM"
+          "hours": "9 AM to 9:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 9:30\u202fPM"
+          "hours": "9 AM to 9:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -4072,49 +3820,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "12 to 11\u202fPM"
+          "hours": "12 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       }
     ],
@@ -4261,49 +4009,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       }
     ],
@@ -4481,49 +4229,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 3\u202fam"
+          "hours": "7 AM to 3 am"
         }
       }
     ],
@@ -4700,49 +4448,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 12\u202fam"
+          "hours": "6 AM to 12 am"
         }
       }
     ],
@@ -4907,49 +4655,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       }
     ],
@@ -5289,49 +5037,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       }
     ],
@@ -5520,49 +5268,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3\u202fPM to 2\u202fAM"
+          "hours": "3 PM to 2 AM"
         }
       }
     ],
@@ -5808,49 +5556,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -6032,49 +5780,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 9:30\u202fPM"
+          "hours": "8 AM to 9:30 PM"
         }
       }
     ],
@@ -6247,49 +5995,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 11:45\u202fPM"
+          "hours": "9 AM to 11:45 PM"
         }
       }
     ],
@@ -6477,49 +6225,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       }
     ],
@@ -6658,49 +6406,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 8:30\u202fPM"
+          "hours": "7 AM to 8:30 PM"
         }
       }
     ],
@@ -6888,31 +6636,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       }
     ],
     "neighborhood": "Lontar, Sambikerep",
@@ -7018,49 +6766,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       }
     ],
@@ -7187,49 +6935,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       }
     ],
@@ -7449,49 +7197,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "12 to 10\u202fPM"
+          "hours": "12 to 10 PM"
         }
       }
     ],
@@ -7626,49 +7374,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       }
     ],
@@ -7824,49 +7572,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       }
     ],
@@ -8061,49 +7809,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       }
     ],
@@ -8330,49 +8078,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -8581,49 +8329,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -8797,49 +8545,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -9045,42 +8793,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8:30\u202fAM to 5\u202fPM"
+          "hours": "8:30 AM to 5 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8:30\u202fAM to 5\u202fPM"
+          "hours": "8:30 AM to 5 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8:30\u202fAM to 5\u202fPM"
+          "hours": "8:30 AM to 5 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8:30\u202fAM to 5\u202fPM"
+          "hours": "8:30 AM to 5 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8:30\u202fAM to 5\u202fPM"
+          "hours": "8:30 AM to 5 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8:30\u202fAM to 5\u202fPM"
+          "hours": "8:30 AM to 5 PM"
         }
       },
       {
@@ -9250,49 +8998,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -9428,49 +9176,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       }
     ],
@@ -9670,49 +9418,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       }
     ],
@@ -9873,49 +9621,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       }
     ],
@@ -10129,49 +9877,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -10370,49 +10118,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       }
     ],
@@ -10613,49 +10361,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       }
     ],
@@ -10808,195 +10556,6 @@ export const cleanedCafesData = [
     "coordinates_estimated": true
   },
   {
-    "id": "ChIJC4EH9Br71y0RW-nw4MvTw50",
-    "name": "Kultur Haus",
-    "address": "One Avenue - One East Residence, Ground Floor, Unit 1C - 1D, Jl. Raya Kertajaya Indah No.79, Manyar Sabrangan, Mulyorejo, Surabaya, East Java 60115, Indonesia",
-    "rating": "4.5",
-    "reviewCount": 826,
-    "placeId": "ChIJC4EH9Br71y0RW-nw4MvTw50",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=Kultur%20Haus&query_place_id=ChIJC4EH9Br71y0RW-nw4MvTw50",
-    "categories": [
-      "Cafe"
-    ],
-    "phone": "+62 31 60010609",
-    "website": null,
-    "openingHours": [],
-    "neighborhood": "Manyar Sabrangan, Mulyorejo",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noguQGl4IPKda09fyQZZY5fxRskhnOYpIC_PQrn5gsmhVOemHmpWCrsn79h7OvJScHJ-SrZnMzU2IAqLLlzBQB2yntqbptLsgfXqGan-iN8A6QOzgFAOvz9jHkF2mr_ymQLbyKL=w408-h544-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "No-contact delivery": true
-        },
-        {
-          "Delivery": true
-        },
-        {
-          "Takeout": true
-        },
-        {
-          "Dine-in": true
-        }
-      ],
-      "Highlights": [
-        {
-          "Great coffee": true
-        },
-        {
-          "Great dessert": true
-        },
-        {
-          "Great tea selection": true
-        },
-        {
-          "Live music": true
-        },
-        {
-          "Live performances": true
-        }
-      ],
-      "Popular for": [
-        {
-          "Lunch": true
-        },
-        {
-          "Dinner": true
-        },
-        {
-          "Solo dining": true
-        },
-        {
-          "Good for working on laptop": true
-        }
-      ],
-      "Offerings": [
-        {
-          "Alcohol": true
-        },
-        {
-          "Beer": true
-        },
-        {
-          "Cocktails": true
-        },
-        {
-          "Coffee": true
-        },
-        {
-          "Quick bite": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Breakfast": true
-        },
-        {
-          "Brunch": true
-        },
-        {
-          "Lunch": true
-        },
-        {
-          "Dinner": true
-        },
-        {
-          "Dessert": true
-        },
-        {
-          "Seating": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Bar onsite": true
-        },
-        {
-          "Restroom": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cozy": true
-        },
-        {
-          "Quiet": true
-        },
-        {
-          "Romantic": true
-        },
-        {
-          "Trendy": true
-        }
-      ],
-      "Crowd": [
-        {
-          "College students": true
-        },
-        {
-          "Groups": true
-        },
-        {
-          "Tourists": true
-        }
-      ],
-      "Planning": [
-        {
-          "Brunch reservations recommended": true
-        },
-        {
-          "Accepts reservations": true
-        }
-      ],
-      "Payments": [
-        {
-          "Credit cards": true
-        }
-      ],
-      "Children": [
-        {
-          "Good for kids": true
-        },
-        {
-          "High chairs": true
-        },
-        {
-          "Kids' menu": true
-        }
-      ],
-      "Parking": [
-        {
-          "Paid parking lot": true
-        },
-        {
-          "Paid street parking": true
-        },
-        null
-      ]
-    },
-    "permanentlyClosed": true,
-    "lastUpdated": "2025-06-07T03:29:09.643Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Timur",
-    "coordinates": [
-      -7.272,
-      112.805
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T18:06:22.595984",
-    "coordinates_source": "surabaya_area_mapping",
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJwVCGeP_61y0R8LDb1OUTeuM",
     "name": "Upper Room Cafe & Resto",
     "address": "Nginden Intan Selatan Blok:C7, Jl. Raya Nginden Jangkungan No.7, Ngenden Jangkungan, Sukolilo, Surabaya, East Java 60118, Indonesia",
@@ -11014,21 +10573,21 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 5\u202fPM"
+          "hours": "8 AM to 5 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 5\u202fPM"
+          "hours": "8 AM to 5 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 5\u202fPM"
+          "hours": "8 AM to 5 PM"
         }
       },
       {
@@ -11042,21 +10601,21 @@ export const cleanedCafesData = [
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 5\u202fPM"
+          "hours": "8 AM to 5 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 5\u202fPM"
+          "hours": "8 AM to 5 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 5\u202fPM"
+          "hours": "8 AM to 5 PM"
         }
       }
     ],
@@ -11474,49 +11033,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -11671,126 +11230,6 @@ export const cleanedCafesData = [
     "coordinates_estimated": true
   },
   {
-    "id": "ChIJD_sbwDn61y0RdaSb8mkKB6c",
-    "name": "Communal Coffee & Eatery",
-    "address": "Jl. Kertajaya Indah Tengah No.24, Mulyorejo, Kec. Mulyorejo, Surabaya, Jawa Timur 60116, Indonesia",
-    "rating": "4.5",
-    "reviewCount": 1423,
-    "placeId": "ChIJD_sbwDn61y0RdaSb8mkKB6c",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=Communal%20Coffee%20%26%20Eatery&query_place_id=ChIJD_sbwDn61y0RdaSb8mkKB6c",
-    "categories": [
-      "Coffee shop"
-    ],
-    "phone": "+62 31 5945301",
-    "website": "https://instagram.com/communal.sby/",
-    "openingHours": [],
-    "neighborhood": "Mulyorejo",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqFHgXU_BB7jTK8jUg_F4RUIrCa0SpmoAJf6IxlwQqXCHy8X9zNSJaBqJtK0KqwTVtP3-IlvB1Q5RG4N22akb1JupASlQlRx7YRwo5aHfnJMwenbAcacG29gLWS3rtdsqrksShjAg=w455-h240-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "Takeout": true
-        },
-        {
-          "Dine-in": true
-        }
-      ],
-      "Accessibility": [
-        {
-          "Wheelchair accessible entrance": false
-        }
-      ],
-      "Offerings": [
-        {
-          "Alcohol": true
-        },
-        {
-          "Coffee": true
-        },
-        {
-          "Late-night food": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Lunch": true
-        },
-        {
-          "Dessert": true
-        },
-        {
-          "Seating": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Bar onsite": true
-        },
-        {
-          "Gender-neutral restroom": true
-        },
-        {
-          "Restroom": true
-        },
-        {
-          "Wi-Fi": true
-        },
-        {
-          "Free Wi-Fi": true
-        }
-      ],
-      "Crowd": [
-        {
-          "Family-friendly": true
-        }
-      ],
-      "Payments": [
-        {
-          "Debit cards": true
-        },
-        {
-          "NFC mobile payments": true
-        },
-        {
-          "Credit cards": true
-        }
-      ],
-      "Children": [
-        {
-          "Good for kids": true
-        }
-      ],
-      "Parking": [
-        {
-          "Paid parking lot": true
-        },
-        {
-          "Paid street parking": true
-        },
-        null
-      ]
-    },
-    "permanentlyClosed": true,
-    "lastUpdated": "2025-06-07T03:29:09.643Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Timur",
-    "coordinates": [
-      -7.272,
-      112.805
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T18:06:22.596041",
-    "coordinates_source": "surabaya_area_mapping",
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJ1aicVMX71y0RbWVfgRWu2yU",
     "name": "Djoedjoegan coffeeshop",
     "address": "Jl. Kalasan No.15, Pacar Keling, Kec. Tambaksari, Surabaya, Jawa Timur 60271, Indonesia",
@@ -11808,49 +11247,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       }
     ],
@@ -12012,49 +11451,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 8\u202fPM"
+          "hours": "10 AM to 8 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7:30\u202fAM to 8\u202fPM"
+          "hours": "7:30 AM to 8 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7:30\u202fAM to 8\u202fPM"
+          "hours": "7:30 AM to 8 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7:30\u202fAM to 8\u202fPM"
+          "hours": "7:30 AM to 8 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7:30\u202fAM to 9\u202fPM"
+          "hours": "7:30 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7:30\u202fAM to 9\u202fPM"
+          "hours": "7:30 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7:30\u202fAM to 9\u202fPM"
+          "hours": "7:30 AM to 9 PM"
         }
       }
     ],
@@ -12203,49 +11642,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 7:45\u202fPM"
+          "hours": "7 AM to 7:45 PM"
         }
       }
     ],
@@ -12441,49 +11880,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 9\u202fPM"
+          "hours": "11 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 9\u202fPM"
+          "hours": "11 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 9\u202fPM"
+          "hours": "11 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 9\u202fPM"
+          "hours": "11 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 9\u202fPM"
+          "hours": "11 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       }
     ],
@@ -12681,49 +12120,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       }
     ],
@@ -12937,49 +12376,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -13181,49 +12620,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       }
     ],
@@ -13367,49 +12806,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       }
     ],
@@ -13548,31 +12987,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 9:30\u202fPM"
+        "hours": "11 AM to 9:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 9:30\u202fPM"
+        "hours": "11 AM to 9:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 9:30\u202fPM"
+        "hours": "11 AM to 9:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 9:30\u202fPM"
+        "hours": "11 AM to 9:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 9:30\u202fPM"
+        "hours": "11 AM to 9:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10:30\u202fPM"
+        "hours": "9 AM to 10:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 9:30\u202fPM"
+        "hours": "9 AM to 9:30 PM"
       }
     ],
     "neighborhood": "Pradahkalikendal, Dukuhpakis",
@@ -13685,42 +13124,42 @@ export const cleanedCafesData = [
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10:30\u202fAM to 3\u202fAM"
+          "hours": "10:30 AM to 3 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10:30\u202fAM to 3\u202fAM"
+          "hours": "10:30 AM to 3 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10:30\u202fAM to 3\u202fAM"
+          "hours": "10:30 AM to 3 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "12\u202fPM to 3\u202fAM"
+          "hours": "12 PM to 3 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10:30\u202fAM to 3\u202fAM"
+          "hours": "10:30 AM to 3 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10:30\u202fAM to 3\u202fAM"
+          "hours": "10:30 AM to 3 AM"
         }
       }
     ],
@@ -13991,49 +13430,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -14187,49 +13626,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "5 to 11\u202fPM"
+          "hours": "5 to 11 PM"
         }
       }
     ],
@@ -14557,49 +13996,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       }
     ],
@@ -14760,49 +14199,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fPM to 2\u202fAM"
+          "hours": "6 PM to 2 AM"
         }
       }
     ],
@@ -15056,115 +14495,6 @@ export const cleanedCafesData = [
     "coordinates_estimated": true
   },
   {
-    "id": "ChIJMewIOsj91y0R_Q2kdDAvUTg",
-    "name": "Cafe Tenda Surabaya",
-    "address": "Jl. Raya Darmo Harapan I, Tanjungsari, Kec. Sukomanunggal, Surabaya, Jawa Timur 60187, Indonesia",
-    "rating": "4",
-    "reviewCount": 508,
-    "placeId": "ChIJMewIOsj91y0R_Q2kdDAvUTg",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=Cafe%20Tenda%20Surabaya&query_place_id=ChIJMewIOsj91y0R_Q2kdDAvUTg",
-    "categories": [
-      "Cafe"
-    ],
-    "phone": "+62 31 7388108",
-    "website": null,
-    "openingHours": [],
-    "neighborhood": "Tanjungsari, Sukomanunggal",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqwtqDOdB7Zv3b3X1ED_voziBp1cvljaahHbl0Qubf-8IsjJ7ia9Aj1ISLYshv3IXuIdsWcwuEwEUHzfcvzzT1G_kcIchwcEIXP5iEfWbV-CC7yZuVriAmTUgu2sQG7bz1pqkRG=w408-h408-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "Takeout": true
-        },
-        {
-          "Dine-in": true
-        }
-      ],
-      "Highlights": [
-        {
-          "Great tea selection": true
-        },
-        {
-          "Live music": true
-        },
-        {
-          "Live performances": true
-        }
-      ],
-      "Offerings": [
-        {
-          "Coffee": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Dinner": true
-        },
-        {
-          "Seating": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Wi-Fi": true
-        },
-        {
-          "Free Wi-Fi": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cozy": true
-        }
-      ],
-      "Crowd": [
-        {
-          "Groups": true
-        }
-      ],
-      "Payments": [
-        {
-          "Cash-only": true
-        },
-        {
-          "Credit cards": true
-        }
-      ],
-      "Children": [
-        {
-          "Good for kids": true
-        }
-      ],
-      "Pets": [
-        {
-          "Dogs allowed": true
-        }
-      ]
-    },
-    "permanentlyClosed": true,
-    "lastUpdated": "2025-06-07T03:29:09.643Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Pusat",
-    "coordinates": [
-      -7.27,
-      112.685
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T18:06:22.596302",
-    "coordinates_source": "surabaya_area_mapping",
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJKwB52A_51y0RhQa66yt2Z3E",
     "name": "Djavahaus Coffee and Eatery",
     "address": "Jl. Kedungsari No.82, Kedungdoro, Kec. Tegalsari, Surabaya, Jawa Timur 60261, Indonesia",
@@ -15182,49 +14512,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       }
     ],
@@ -15435,49 +14765,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "12 to 9\u202fPM"
+          "hours": "12 to 9 PM"
         }
       }
     ],
@@ -15643,49 +14973,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -15887,49 +15217,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -16109,27 +15439,27 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Sunday",
@@ -16311,31 +15641,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12 to 11:30\u202fPM"
+        "hours": "12 to 11:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "12 to 11:30\u202fPM"
+        "hours": "12 to 11:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "12 to 11:30\u202fPM"
+        "hours": "12 to 11:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 11:30\u202fPM"
+        "hours": "12 to 11:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 11:30\u202fPM"
+        "hours": "12 to 11:30 PM"
       }
     ],
     "neighborhood": "Putat Jaya, Sawahan",
@@ -16500,49 +15830,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "4 to 10\u202fPM"
+          "hours": "4 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "4 to 10\u202fPM"
+          "hours": "4 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "4 to 10\u202fPM"
+          "hours": "4 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "4 to 10\u202fPM"
+          "hours": "4 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "4 to 10\u202fPM"
+          "hours": "4 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       }
     ],
@@ -16712,7 +16042,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJt2kPHhb81y0R_LSixXwL1MA",
-    "name": "Soci\u00e9t\u00e9 Surabaya",
+    "name": "Société Surabaya",
     "address": "Jl. Mayjen HR. Muhammad No.102, Pradahkalikendal, Kec. Dukuhpakis, Surabaya, Jawa Timur 60226, Indonesia",
     "rating": "4.6",
     "reviewCount": 3588,
@@ -16727,31 +16057,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       }
     ],
     "neighborhood": "Pradahkalikendal, Dukuhpakis",
@@ -16952,31 +16282,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Putat Jaya, Sawahan",
@@ -17098,31 +16428,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Tanjungsari, Sukomanunggal",
@@ -17216,49 +16546,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -17448,31 +16778,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10:30\u202fPM"
+        "hours": "8 AM to 10:30 PM"
       }
     ],
     "neighborhood": "Tandes",
@@ -17695,19 +17025,19 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Pradahkalikendal, Dukuhpakis",
@@ -17895,49 +17225,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       }
     ],
@@ -18101,7 +17431,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJaSxCoyX91y0RUj-XkjKji-o",
-    "name": "\ufe0f Kollabora | The Best Thematic Cafe & Restaurant in Indonesia",
+    "name": "️ Kollabora | The Best Thematic Cafe & Restaurant in Indonesia",
     "address": "Jl. Raya Kupang Indah No.51, Sonokwijenan, Kec. Sukomanunggal, Surabaya, Jawa Timur 60225, Indonesia",
     "rating": "4.7",
     "reviewCount": 1578,
@@ -18552,49 +17882,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       }
     ],
@@ -18698,49 +18028,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6 to 11\u202fAM"
+          "hours": "6 to 11 AM"
         }
       }
     ],
@@ -18855,49 +18185,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 11:55\u202fPM"
+          "hours": "6 AM to 11:55 PM"
         }
       }
     ],
@@ -19106,42 +18436,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
@@ -19345,42 +18675,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
@@ -19574,49 +18904,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 11:30\u202fPM"
+          "hours": "9 AM to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       }
     ],
@@ -19968,42 +19298,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "5:30\u202fPM to 12\u202fAM"
+          "hours": "5:30 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "5:30\u202fPM to 12\u202fAM"
+          "hours": "5:30 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "5:30\u202fPM to 12\u202fAM"
+          "hours": "5:30 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "5:30\u202fPM to 12\u202fAM"
+          "hours": "5:30 PM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "5:30\u202fPM to 12\u202fAM"
+          "hours": "5:30 PM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "5:30\u202fPM to 12\u202fAM"
+          "hours": "5:30 PM to 12 AM"
         }
       },
       {
@@ -20136,49 +19466,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 2\u202fAM"
+          "hours": "10 AM to 2 AM"
         }
       }
     ],
@@ -20274,49 +19604,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fPM to 12\u202fAM"
+          "hours": "6 PM to 12 AM"
         }
       }
     ],
@@ -20423,42 +19753,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 5\u202fPM"
+          "hours": "9 AM to 5 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 5\u202fPM"
+          "hours": "9 AM to 5 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 5\u202fPM"
+          "hours": "9 AM to 5 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 5\u202fPM"
+          "hours": "9 AM to 5 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 5\u202fPM"
+          "hours": "9 AM to 5 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 3\u202fPM"
+          "hours": "9 AM to 3 PM"
         }
       },
       {
@@ -20701,49 +20031,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "1 to 11\u202fPM"
+          "hours": "1 to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "1 to 11\u202fPM"
+          "hours": "1 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       }
     ],
@@ -20874,11 +20204,11 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "2 to 9\u202fPM"
+        "hours": "2 to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "2 to 9\u202fPM"
+        "hours": "2 to 9 PM"
       },
       {
         "day": "Wednesday",
@@ -20886,15 +20216,15 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "2 to 9\u202fPM"
+        "hours": "2 to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "2 to 9\u202fPM"
+        "hours": "2 to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "2 to 9\u202fPM"
+        "hours": "2 to 9 PM"
       },
       {
         "day": "Sunday",
@@ -20971,42 +20301,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
@@ -21176,49 +20506,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6:30\u202fPM to 12\u202fAM"
+          "hours": "6:30 PM to 12 AM"
         }
       }
     ],
@@ -21359,49 +20689,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "5\u202fPM to 2\u202fAM"
+          "hours": "5 PM to 2 AM"
         }
       }
     ],
@@ -21690,49 +21020,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 9:30\u202fPM"
+          "hours": "11 AM to 9:30 PM"
         }
       }
     ],
@@ -21880,31 +21210,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 8:30\u202fPM"
+        "hours": "8 AM to 8:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       }
     ],
     "neighborhood": "North Perak, Pabean Cantikan",
@@ -22038,31 +21368,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Sidosermo, Wonocolo",
@@ -22264,31 +21594,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       }
     ],
     "neighborhood": "Jemur Wonosari, Wonocolo",
@@ -22612,31 +21942,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       }
     ],
     "neighborhood": "Kendangsari, Tenggilis Mejoyo",
@@ -22811,31 +22141,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10:30\u202fAM to 10\u202fPM"
+        "hours": "10:30 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10:30\u202fAM to 10\u202fPM"
+        "hours": "10:30 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10:30\u202fAM to 10\u202fPM"
+        "hours": "10:30 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10:30\u202fAM to 10\u202fPM"
+        "hours": "10:30 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "1 to 10\u202fPM"
+        "hours": "1 to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10:30\u202fAM to 10\u202fPM"
+        "hours": "10:30 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10:30\u202fAM to 10\u202fPM"
+        "hours": "10:30 AM to 10 PM"
       }
     ],
     "neighborhood": "Baratajaya, Gubeng",
@@ -22963,31 +22293,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "5 to 11\u202fPM"
+        "hours": "5 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "5 to 11\u202fPM"
+        "hours": "5 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "5 to 11\u202fPM"
+        "hours": "5 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "12\u202fAM to 12\u202fPM, 5 to 11\u202fPM"
+        "hours": "12 AM to 12 PM, 5 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       }
     ],
     "neighborhood": "Medokan Semampir, Sukolilo",
@@ -23201,31 +22531,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 11\u202fPM"
+        "hours": "11 AM to 11 PM"
       }
     ],
     "neighborhood": "Medokan Semampir, Sukolilo",
@@ -23594,31 +22924,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Klampis Ngasem, Sukolilo",
@@ -23717,31 +23047,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Kali Rungkut, Rungkut",
@@ -23839,31 +23169,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       }
     ],
     "neighborhood": "Menur Pumpungan, Sukolilo",
@@ -23987,31 +23317,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "3\u202fPM to 3\u202fAM"
+        "hours": "3 PM to 3 AM"
       },
       {
         "day": "Thursday",
-        "hours": "3\u202fPM to 3\u202fAM"
+        "hours": "3 PM to 3 AM"
       },
       {
         "day": "Friday",
-        "hours": "3\u202fPM to 3\u202fAM"
+        "hours": "3 PM to 3 AM"
       },
       {
         "day": "Saturday",
-        "hours": "3\u202fPM to 3\u202fAM"
+        "hours": "3 PM to 3 AM"
       },
       {
         "day": "Sunday",
-        "hours": "3\u202fPM to 3\u202fAM"
+        "hours": "3 PM to 3 AM"
       }
     ],
     "neighborhood": "Pucang Sewu, Gubeng",
@@ -24444,31 +23774,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "12\u202fAM to 12\u202fPM, 3\u202fPM to 12\u202fAM"
+        "hours": "12 AM to 12 PM, 3 PM to 12 AM"
       }
     ],
     "neighborhood": "Peneleh, Genteng",
@@ -24571,31 +23901,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "3\u202fPM to 12\u202fAM"
+        "hours": "3 PM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "1\u202fPM to 12\u202fAM"
+        "hours": "1 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       }
     ],
     "neighborhood": "South Krembangan, Krembangan",
@@ -24710,31 +24040,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       },
       {
         "day": "Thursday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       },
       {
         "day": "Friday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 2\u202fAM"
+        "hours": "6 AM to 2 AM"
       }
     ],
     "neighborhood": "Tambaksari",
@@ -24866,31 +24196,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12 to 8:30\u202fPM"
+        "hours": "12 to 8:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "12 to 8:30\u202fPM"
+        "hours": "12 to 8:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "12 to 8:30\u202fPM"
+        "hours": "12 to 8:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "12 to 8:30\u202fPM"
+        "hours": "12 to 8:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "1 to 8:30\u202fPM"
+        "hours": "1 to 8:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 9:30\u202fPM"
+        "hours": "12 to 9:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 9:30\u202fPM"
+        "hours": "12 to 9:30 PM"
       }
     ],
     "neighborhood": "Genteng",
@@ -24962,31 +24292,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Menur Pumpungan, Sukolilo",
@@ -25209,31 +24539,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Menur Pumpungan, Sukolilo",
@@ -25367,31 +24697,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12\u202fAM to 5\u202fPM"
+        "hours": "12 AM to 5 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "12 to 3\u202fPM, 5 to 10\u202fPM"
+        "hours": "12 to 3 PM, 5 to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "12 to 3\u202fPM, 5 to 10\u202fPM"
+        "hours": "12 to 3 PM, 5 to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "12 to 3\u202fPM, 5 to 10\u202fPM"
+        "hours": "12 to 3 PM, 5 to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "12 to 3\u202fPM, 5\u202fPM to 12\u202fAM"
+        "hours": "12 to 3 PM, 5 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 3\u202fPM, 5\u202fPM to 12\u202fAM"
+        "hours": "12 to 3 PM, 5 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 3\u202fPM, 5\u202fPM to 12\u202fAM"
+        "hours": "12 to 3 PM, 5 PM to 12 AM"
       }
     ],
     "neighborhood": "Kedung Baruk, Rungkut",
@@ -25555,31 +24885,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 11:30\u202fPM"
+        "hours": "8 AM to 11:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 11:30\u202fPM"
+        "hours": "8 AM to 11:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 11:30\u202fPM"
+        "hours": "8 AM to 11:30 PM"
       }
     ],
     "neighborhood": "Ngagel, Wonokromo",
@@ -25713,31 +25043,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "4\u202fPM to 1\u202fAM"
+        "hours": "4 PM to 1 AM"
       }
     ],
     "neighborhood": "Sidosermo, Wonocolo",
@@ -25829,31 +25159,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       }
     ],
     "neighborhood": "Kali Rungkut, Rungkut",
@@ -26023,27 +25353,27 @@ export const cleanedCafesData = [
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Ngenden Jangkungan, Sukolilo",
@@ -26196,19 +25526,19 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -26329,31 +25659,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       }
     ],
     "neighborhood": "Manyar Sabrangan, Mulyorejo",
@@ -26522,31 +25852,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Peneleh, Genteng",
@@ -26698,31 +26028,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 7\u202fPM"
+        "hours": "7 AM to 7 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 7\u202fPM"
+        "hours": "7 AM to 7 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 7\u202fPM"
+        "hours": "7 AM to 7 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 7\u202fPM"
+        "hours": "7 AM to 7 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 7\u202fPM"
+        "hours": "7 AM to 7 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 7\u202fPM"
+        "hours": "7 AM to 7 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 4\u202fPM"
+        "hours": "7 AM to 4 PM"
       }
     ],
     "neighborhood": "Bongkaran, Pabean Cantikan",
@@ -26888,7 +26218,7 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Tuesday",
@@ -26900,19 +26230,19 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 7\u202fPM"
+        "hours": "9 AM to 7 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 7\u202fPM"
+        "hours": "9 AM to 7 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 7\u202fPM"
+        "hours": "9 AM to 7 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 7\u202fPM"
+        "hours": "9 AM to 7 PM"
       }
     ],
     "neighborhood": "Kapasari, Genteng",
@@ -26972,31 +26302,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Pucang Sewu, Gubeng",
@@ -27174,31 +26504,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 6\u202fPM"
+        "hours": "8 AM to 6 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Klampis Ngasem, Sukolilo",
@@ -27339,31 +26669,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 11\u202fPM"
+        "hours": "8 AM to 11 PM"
       }
     ],
     "neighborhood": "Tenggilis Mejoyo",
@@ -27540,31 +26870,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Margorejo, Wonocolo",
@@ -27725,31 +27055,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Margorejo, Wonocolo",
@@ -27911,49 +27241,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "1 to 10\u202fPM"
+          "hours": "1 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       }
     ],
@@ -28309,49 +27639,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       }
     ],
@@ -28504,49 +27834,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -28718,31 +28048,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       }
     ],
     "neighborhood": "Wonorejo, Rungkut",
@@ -28895,31 +28225,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 2\u202fAM"
+        "hours": "9 AM to 2 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 2\u202fAM"
+        "hours": "9 AM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       }
     ],
     "neighborhood": "Menur Pumpungan, Sukolilo",
@@ -29068,31 +28398,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "5\u202fPM to 12\u202fAM"
+        "hours": "5 PM to 12 AM"
       }
     ],
     "neighborhood": "Gubeng",
@@ -29216,31 +28546,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 9\u202fPM"
+        "hours": "6 AM to 9 PM"
       }
     ],
     "neighborhood": "East Perak, Pabean Cantikan",
@@ -29339,27 +28669,27 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Sunday",
@@ -29555,31 +28885,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       }
     ],
     "neighborhood": "Gubeng",
@@ -29768,31 +29098,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       }
     ],
     "neighborhood": "Medokan Semampir, Sukolilo",
@@ -30011,31 +29341,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       },
       {
         "day": "Thursday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       },
       {
         "day": "Friday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       },
       {
         "day": "Saturday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       },
       {
         "day": "Sunday",
-        "hours": "3 to 11:29\u202fPM"
+        "hours": "3 to 11:29 PM"
       }
     ],
     "neighborhood": "Embong Kaliasin, Genteng",
@@ -30167,31 +29497,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       }
     ],
     "neighborhood": "Pucang Sewu, Gubeng",
@@ -30324,7 +29654,7 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Friday",
@@ -30336,7 +29666,7 @@ export const cleanedCafesData = [
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       }
     ],
     "neighborhood": "Pucang Sewu, Gubeng",
@@ -30450,31 +29780,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Embong Kaliasin, Genteng",
@@ -30670,31 +30000,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       }
     ],
     "neighborhood": "Baratajaya, Gubeng",
@@ -30847,31 +30177,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Pucang Sewu, Gubeng",
@@ -31063,31 +30393,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       },
       {
         "day": "Thursday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       },
       {
         "day": "Friday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       },
       {
         "day": "Saturday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       },
       {
         "day": "Sunday",
-        "hours": "2\u202fPM to 4\u202fAM"
+        "hours": "2 PM to 4 AM"
       }
     ],
     "neighborhood": "Pucang Sewu, Gubeng",
@@ -31291,31 +30621,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       }
     ],
     "neighborhood": "Keputih, Sukolilo",
@@ -31520,31 +30850,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       }
     ],
     "neighborhood": "Ngenden Jangkungan, Sukolilo",
@@ -31725,31 +31055,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       }
     ],
     "neighborhood": "Ngenden Jangkungan, Sukolilo",
@@ -31896,31 +31226,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       }
     ],
     "neighborhood": "Keputih, Sukolilo",
@@ -32086,31 +31416,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -32223,31 +31553,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       }
     ],
     "neighborhood": "Ngagel, Wonokromo",
@@ -32374,31 +31704,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 5\u202fPM"
+        "hours": "7 AM to 5 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 5\u202fPM"
+        "hours": "7 AM to 5 PM"
       }
     ],
     "neighborhood": "Embong Kaliasin, Genteng",
@@ -32523,23 +31853,23 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Saturday",
@@ -32694,31 +32024,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Embong Kaliasin, Genteng",
@@ -32826,27 +32156,27 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
@@ -33021,31 +32351,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Genteng",
@@ -33207,49 +32537,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -33433,31 +32763,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Ketabang, Genteng",
@@ -33617,31 +32947,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "1\u202fPM to 12\u202fAM"
+        "hours": "1 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "1\u202fPM to 12\u202fAM"
+        "hours": "1 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -33905,31 +33235,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 10:30\u202fPM"
+        "hours": "7 AM to 10:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 9:30\u202fPM"
+        "hours": "7 AM to 9:30 PM"
       }
     ],
     "neighborhood": "Kedungdoro, Tegalsari",
@@ -34052,31 +33382,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12\u202fPM to 2\u202fAM"
+        "hours": "12 PM to 2 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "12\u202fPM to 2\u202fAM"
+        "hours": "12 PM to 2 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "12\u202fPM to 2\u202fAM"
+        "hours": "12 PM to 2 AM"
       },
       {
         "day": "Thursday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Friday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Saturday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       }
     ],
     "neighborhood": "DR. Soetomo, Tegalsari",
@@ -34197,49 +33527,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       }
     ],
@@ -34376,31 +33706,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Genteng",
@@ -34559,49 +33889,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       }
     ],
@@ -34864,31 +34194,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -35044,27 +34374,27 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10:30\u202fAM to 7:30\u202fPM"
+        "hours": "10:30 AM to 7:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10:30\u202fAM to 7:30\u202fPM"
+        "hours": "10:30 AM to 7:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10:30\u202fAM to 7:30\u202fPM"
+        "hours": "10:30 AM to 7:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10:30\u202fAM to 7:30\u202fPM"
+        "hours": "10:30 AM to 7:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "10:30\u202fAM to 7:30\u202fPM"
+        "hours": "10:30 AM to 7:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10:30\u202fAM to 7:30\u202fPM"
+        "hours": "10:30 AM to 7:30 PM"
       },
       {
         "day": "Sunday",
@@ -35224,11 +34554,11 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
@@ -35236,19 +34566,19 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Ngagel, Wonokromo",
@@ -35389,31 +34719,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "5\u202fPM to 1\u202fAM"
+        "hours": "5 PM to 1 AM"
       }
     ],
     "neighborhood": "Gayungan",
@@ -35536,31 +34866,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "4 to 11\u202fPM"
+        "hours": "4 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "4 to 11\u202fPM"
+        "hours": "4 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "4 to 11\u202fPM"
+        "hours": "4 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "4 to 11\u202fPM"
+        "hours": "4 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "4 to 11\u202fPM"
+        "hours": "4 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "4 to 10\u202fPM"
+        "hours": "4 to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "4 to 10\u202fPM"
+        "hours": "4 to 10 PM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -35706,31 +35036,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7:30\u202fAM to 9\u202fPM"
+        "hours": "7:30 AM to 9 PM"
       }
     ],
     "neighborhood": "Manukan Kulon, Tandes",
@@ -35823,31 +35153,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       }
     ],
     "neighborhood": "Wiyung",
@@ -35951,31 +35281,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       }
     ],
     "neighborhood": "Ketintang, Gayungan",
@@ -36115,31 +35445,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -36250,31 +35580,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Gunung Sari, Dukuhpakis",
@@ -36688,31 +36018,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Pacar Keling, Tambaksari",
@@ -36868,31 +36198,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12 to 9\u202fAM, 11\u202fAM to 9\u202fPM"
+        "hours": "12 to 9 AM, 11 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Gubeng",
@@ -37050,31 +36380,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9:20\u202fAM to 12\u202fAM"
+        "hours": "9:20 AM to 12 AM"
       }
     ],
     "neighborhood": "Karah, Jambangan",
@@ -37200,31 +36530,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Kedungdoro, Tegalsari",
@@ -37396,11 +36726,11 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 5\u202fPM"
+        "hours": "10 AM to 5 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 5\u202fPM"
+        "hours": "10 AM to 5 PM"
       },
       {
         "day": "Wednesday",
@@ -37408,15 +36738,15 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 5\u202fPM"
+        "hours": "10 AM to 5 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 5\u202fPM"
+        "hours": "10 AM to 5 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 5\u202fPM"
+        "hours": "10 AM to 5 PM"
       },
       {
         "day": "Sunday",
@@ -37533,31 +36863,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 12\u202fAM"
+        "hours": "6 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 12\u202fAM"
+        "hours": "6 AM to 12 AM"
       }
     ],
     "neighborhood": "DR. Soetomo, Tegalsari",
@@ -37762,31 +37092,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Babatan, Wiyung",
@@ -38068,31 +37398,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       }
     ],
     "neighborhood": "Babatan, Wiyung",
@@ -38244,31 +37574,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "3:30 to 11:30\u202fPM"
+        "hours": "3:30 to 11:30 PM"
       }
     ],
     "neighborhood": "Gunung Sari, Dukuhpakis",
@@ -38465,31 +37795,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Tegalsari",
@@ -38665,31 +37995,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 8\u202fPM"
+        "hours": "7 AM to 8 PM"
       }
     ],
     "neighborhood": "Pacar Keling, Tambaksari",
@@ -38836,31 +38166,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Airlangga, Gubeng",
@@ -39014,31 +38344,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Babatan, Wiyung",
@@ -39167,31 +38497,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 4\u202fAM"
+        "hours": "10 AM to 4 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       }
     ],
     "neighborhood": "Babatan, Wiyung",
@@ -39402,31 +38732,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 9\u202fPM"
+        "hours": "11 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Ketabang, Genteng",
@@ -39532,31 +38862,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 1\u202fAM"
+        "hours": "9 AM to 1 AM"
       }
     ],
     "neighborhood": "Wonokromo",
@@ -39678,31 +39008,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Ketabang, Genteng",
@@ -39859,27 +39189,27 @@ export const cleanedCafesData = [
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       }
     ],
     "neighborhood": "Ketabang, Genteng",
@@ -40071,31 +39401,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       }
     ],
     "neighborhood": "Darmo, Wonokromo",
@@ -40293,11 +39623,11 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 7\u202fPM"
+        "hours": "11 AM to 7 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 7\u202fPM"
+        "hours": "11 AM to 7 PM"
       },
       {
         "day": "Saturday",
@@ -40460,31 +39790,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       }
     ],
     "neighborhood": "Ngagel, Wonokromo",
@@ -40647,31 +39977,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Sawunggaling, Wonokromo",
@@ -40829,27 +40159,27 @@ export const cleanedCafesData = [
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Dukuh Pakis, Dukuhpakis",
@@ -40979,31 +40309,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Kedurus, Karangpilang",
@@ -41289,31 +40619,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "2 to 11:30\u202fPM"
+        "hours": "2 to 11:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 11:30\u202fPM"
+        "hours": "10 AM to 11:30 PM"
       }
     ],
     "neighborhood": "Kedurus, Karangpilang",
@@ -41450,31 +40780,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 10\u202fPM"
+        "hours": "8 AM to 10 PM"
       }
     ],
     "neighborhood": "Babatan, Wiyung",
@@ -41655,49 +40985,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       }
     ],
@@ -41891,31 +41221,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       }
     ],
     "neighborhood": "Ketintang, Gayungan",
@@ -42050,31 +41380,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       }
     ],
     "neighborhood": "Pradahkalikendal, Dukuhpakis",
@@ -42274,11 +41604,11 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "12 to 10\u202fPM"
+        "hours": "12 to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "12 to 10\u202fPM"
+        "hours": "12 to 10 PM"
       },
       {
         "day": "Saturday",
@@ -42469,31 +41799,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9:30\u202fAM to 10\u202fPM"
+        "hours": "9:30 AM to 10 PM"
       }
     ],
     "neighborhood": "Kedurus, Wiyung",
@@ -42646,31 +41976,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       }
     ],
     "neighborhood": "Dukuh Pakis, Dukuhpakis",
@@ -42855,49 +42185,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 8\u202fPM"
+          "hours": "7 AM to 8 PM"
         }
       }
     ],
@@ -43045,49 +42375,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -43279,31 +42609,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8:30\u202fAM to 10\u202fPM"
+        "hours": "8:30 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8:30\u202fAM to 10\u202fPM"
+        "hours": "8:30 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8:30\u202fAM to 10\u202fPM"
+        "hours": "8:30 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8:30\u202fAM to 10\u202fPM"
+        "hours": "8:30 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "8:30\u202fAM to 10:30\u202fPM"
+        "hours": "8:30 AM to 10:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8:30\u202fAM to 10:30\u202fPM"
+        "hours": "8:30 AM to 10:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8:30\u202fAM to 10\u202fPM"
+        "hours": "8:30 AM to 10 PM"
       }
     ],
     "neighborhood": "Menanggal, Gayungan",
@@ -43503,49 +42833,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -43748,7 +43078,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJ19MeFdn91y0RPu0RRuf5iwI",
-    "name": "Han\u2019s Coffee Surabaya",
+    "name": "Han’s Coffee Surabaya",
     "address": "Jl. Griya Kebraon Sel. V No.1, Kebraon, Kec. Karangpilang, Surabaya, Jawa Timur 60222, Indonesia",
     "rating": "4.7",
     "reviewCount": 191,
@@ -43762,31 +43092,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       }
     ],
     "neighborhood": "Kebraon, Karangpilang",
@@ -43978,31 +43308,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "12\u202fPM to 12\u202fAM"
+        "hours": "12 PM to 12 AM"
       }
     ],
     "neighborhood": "Gayungan",
@@ -44182,31 +43512,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       }
     ],
     "neighborhood": "Jemur Wonosari, Wonocolo",
@@ -44341,31 +43671,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "1 to 11\u202fPM"
+        "hours": "1 to 11 PM"
       }
     ],
     "neighborhood": "Pagesangan, Jambangan",
@@ -44533,31 +43863,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Pagesangan, Jambangan",
@@ -44699,49 +44029,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -44911,49 +44241,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       }
     ],
@@ -45326,31 +44656,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 1:30\u202fAM"
+        "hours": "7 AM to 1:30 AM"
       }
     ],
     "neighborhood": "Medokan Ayu, Rungkut",
@@ -45486,49 +44816,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       }
     ],
@@ -45717,7 +45047,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJoVoE20n71y0Rw-1M2RJh0Qg",
-    "name": "VERTE Caf\u00e9",
+    "name": "VERTE Café",
     "address": "Jl. Jambi No.47, Darmo, Kec. Wonokromo, Surabaya, Jawa Timur 60241, Indonesia",
     "rating": "4.7",
     "reviewCount": 737,
@@ -45731,31 +45061,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Darmo, Wonokromo",
@@ -45915,7 +45245,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJ1wDz7y371y0RuCeu5DlR40A",
-    "name": "ASIX Caf\u00e9 - Gayungsari Timur",
+    "name": "ASIX Café - Gayungsari Timur",
     "address": "Jl. Gayungsari Tim. No.35, Menanggal, Kec. Gayungan, Surabaya, Jawa Timur 60234, Indonesia",
     "rating": "4.3",
     "reviewCount": 314,
@@ -45929,31 +45259,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Menanggal, Gayungan",
@@ -46085,31 +45415,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 12\u202fAM"
+        "hours": "9 AM to 12 AM"
       }
     ],
     "neighborhood": "Wonorejo, Rungkut",
@@ -46234,31 +45564,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 8\u202fPM"
+        "hours": "9 AM to 8 PM"
       },
       {
         "day": "Saturday",
-        "hours": "3 to 10\u202fPM"
+        "hours": "3 to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "3 to 10\u202fPM"
+        "hours": "3 to 10 PM"
       }
     ],
     "neighborhood": "Klampis Ngasem, Sukolilo",
@@ -46407,31 +45737,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "1\u202fPM to 12\u202fAM"
+        "hours": "1 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       }
     ],
     "neighborhood": "Jemur Wonosari, Wonocolo",
@@ -46669,31 +45999,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Manukan Kulon, Tandes",
@@ -46950,31 +46280,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "2 to 11\u202fPM"
+        "hours": "2 to 11 PM"
       }
     ],
     "neighborhood": "Lontar, Sambikerep",
@@ -47051,31 +46381,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 6\u202fAM, 10\u202fAM to 12\u202fAM"
+        "hours": "12 to 6 AM, 10 AM to 12 AM"
       }
     ],
     "neighborhood": "Embong Kaliasin, Genteng",
@@ -47203,49 +46533,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -47362,27 +46692,27 @@ export const cleanedCafesData = [
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 3\u202fPM"
+        "hours": "7 AM to 3 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6:30\u202fAM to 2\u202fPM"
+        "hours": "6:30 AM to 2 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6:30\u202fAM to 2\u202fPM"
+        "hours": "6:30 AM to 2 PM"
       }
     ],
     "neighborhood": "Manyar Sabrangan, Mulyorejo",
@@ -47507,31 +46837,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6:30\u202fAM to 9:30\u202fPM"
+        "hours": "6:30 AM to 9:30 PM"
       }
     ],
     "neighborhood": "Kalisari, Mulyorejo",
@@ -47668,27 +46998,27 @@ export const cleanedCafesData = [
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Manukan Kulon, Tandes",
@@ -47807,7 +47137,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJzYfmvCn61y0RVTwr7jhZP_k",
-    "name": "Bebini Gelati Caf\u00e9",
+    "name": "Bebini Gelati Café",
     "address": "Jl. Dharmahusada No.183-185, Mojo, Kec. Gubeng, Surabaya, Jawa Timur 60285, Indonesia",
     "rating": "4.6",
     "reviewCount": 1051,
@@ -47822,31 +47152,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 9\u202fPM"
+        "hours": "12 to 9 PM"
       }
     ],
     "neighborhood": "Mojo, Gubeng",
@@ -48009,31 +47339,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 9\u202fPM"
+        "hours": "8 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       }
     ],
     "neighborhood": "Mojo, Gubeng",
@@ -48190,31 +47520,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -48346,31 +47676,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6:30\u202fAM to 9\u202fPM"
+        "hours": "6:30 AM to 9 PM"
       }
     ],
     "neighborhood": "Kalisari, Mulyorejo",
@@ -48502,31 +47832,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -48664,31 +47994,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Kalisari, Mulyorejo",
@@ -48786,49 +48116,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -49016,31 +48346,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 12\u202fAM"
+        "hours": "8 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "2\u202fPM to 12\u202fAM"
+        "hours": "2 PM to 12 AM"
       }
     ],
     "neighborhood": null,
@@ -49167,31 +48497,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       }
     ],
     "neighborhood": "Lontar, Sambikerep",
@@ -49508,31 +48838,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Kejawaan Putih Tamba, Mulyorejo",
@@ -49638,31 +48968,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -49848,27 +49178,27 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Sunday",
@@ -50059,19 +49389,19 @@ export const cleanedCafesData = [
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 8\u202fPM"
+        "hours": "10 AM to 8 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 8\u202fPM"
+        "hours": "10 AM to 8 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 8\u202fPM"
+        "hours": "10 AM to 8 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 7\u202fPM"
+        "hours": "10 AM to 7 PM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -50159,31 +49489,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       }
     ],
     "neighborhood": "Kalisari, Mulyorejo",
@@ -50344,49 +49674,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -50560,31 +49890,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -50955,31 +50285,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 11\u202fPM"
+        "hours": "7 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 12\u202fAM"
+        "hours": "7 AM to 12 AM"
       }
     ],
     "neighborhood": "Manukan Kulon, Tandes",
@@ -51138,31 +50468,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9:30\u202fAM to 9:30\u202fPM"
+        "hours": "9:30 AM to 9:30 PM"
       }
     ],
     "neighborhood": "Manukan Kulon, Tandes",
@@ -51330,31 +50660,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Kertajaya, Gubeng",
@@ -51518,31 +50848,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Mojo, Gubeng",
@@ -51747,31 +51077,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 2\u202fPM, 5 to 9\u202fPM"
+        "hours": "7 AM to 2 PM, 5 to 9 PM"
       }
     ],
     "neighborhood": "Kalisari, Mulyorejo",
@@ -52075,31 +51405,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 1\u202fAM"
+        "hours": "7 AM to 1 AM"
       }
     ],
     "neighborhood": "Penjaringan Sari, Rungkut",
@@ -52235,31 +51565,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11\u202fAM to 10\u202fPM"
+        "hours": "11 AM to 10 PM"
       }
     ],
     "neighborhood": "Kalijudan, Mulyorejo",
@@ -52451,31 +51781,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 1\u202fAM"
+        "hours": "6 AM to 1 AM"
       }
     ],
     "neighborhood": "Gunung Anyar Tambak, Gunung Anyar",
@@ -52598,31 +51928,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -52781,31 +52111,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       }
     ],
     "neighborhood": "Medokan Ayu, Rungkut",
@@ -52931,31 +52261,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 9\u202fPM"
+        "hours": "7 AM to 9 PM"
       }
     ],
     "neighborhood": "Mulyorejo",
@@ -53091,31 +52421,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "12\u202fPM to 2\u202fAM"
+        "hours": "12 PM to 2 AM"
       }
     ],
     "neighborhood": "Lidah Wetan, Lakarsantri",
@@ -53254,31 +52584,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Medokan Ayu, Rungkut",
@@ -53625,31 +52955,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 3\u202fAM"
+        "hours": "7 AM to 3 AM"
       }
     ],
     "neighborhood": "Gunung Anyar",
@@ -53773,31 +53103,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Kali Rungkut, Rungkut",
@@ -54054,31 +53384,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "12 to 11\u202fPM"
+        "hours": "12 to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "12 to 11\u202fPM"
+        "hours": "12 to 11 PM"
       }
     ],
     "neighborhood": "Lidah Wetan, Lakarsantri",
@@ -54192,31 +53522,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Gunung Anyar",
@@ -54387,31 +53717,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 9:30\u202fPM"
+        "hours": "8 AM to 9:30 PM"
       }
     ],
     "neighborhood": "Gunung Anyar",
@@ -54536,31 +53866,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 8:45\u202fPM"
+        "hours": "10 AM to 8:45 PM"
       }
     ],
     "neighborhood": "Penjaringan Sari, Rungkut",
@@ -55167,31 +54497,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 4\u202fAM"
+        "hours": "7 AM to 4 AM"
       }
     ],
     "neighborhood": "Benowo, Pakal",
@@ -55288,31 +54618,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 9\u202fPM"
+        "hours": "10 AM to 9 PM"
       }
     ],
     "neighborhood": "Babat Jerawat, Pakal",
@@ -55434,27 +54764,27 @@ export const cleanedCafesData = [
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12\u202fAM"
+        "hours": "10 AM to 12 AM"
       }
     ],
     "neighborhood": "Sidotopo Wetan, Kenjeran",
@@ -55848,31 +55178,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "11:30\u202fAM to 10\u202fPM"
+        "hours": "11:30 AM to 10 PM"
       }
     ],
     "neighborhood": "Sememi, Benowo",
@@ -55989,31 +55319,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 2\u202fAM"
+        "hours": "10 AM to 2 AM"
       }
     ],
     "neighborhood": "Keputih, Sukolilo",
@@ -56146,31 +55476,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       }
     ],
     "neighborhood": "Kalijudan, Mulyorejo",
@@ -56289,31 +55619,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       }
     ],
     "neighborhood": "Gading, Tambaksari",
@@ -56463,31 +55793,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 10\u202fPM"
+        "hours": "9 AM to 10 PM"
       }
     ],
     "neighborhood": "Kalijudan, Mulyorejo",
@@ -56689,31 +56019,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       }
     ],
     "neighborhood": "Ketabang, Genteng",
@@ -57035,31 +56365,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Thursday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Friday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Saturday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       },
       {
         "day": "Sunday",
-        "hours": "4\u202fPM to 2\u202fAM"
+        "hours": "4 PM to 2 AM"
       }
     ],
     "neighborhood": "Darmo, Wonokromo",
@@ -57210,31 +56540,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "3 to 11\u202fPM"
+        "hours": "3 to 11 PM"
       }
     ],
     "neighborhood": "Keputih, Sukolilo",
@@ -57626,31 +56956,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Thursday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Friday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "8\u202fAM to 1\u202fAM"
+        "hours": "8 AM to 1 AM"
       }
     ],
     "neighborhood": "Margorejo, Wonocolo",
@@ -57751,27 +57081,27 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 5\u202fPM"
+        "hours": "9 AM to 5 PM"
       },
       {
         "day": "Sunday",
@@ -57898,31 +57228,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "4\u202fPM to 12\u202fAM"
+        "hours": "4 PM to 12 AM"
       }
     ],
     "neighborhood": "Kebonsari, Jambangan",
@@ -58073,31 +57403,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 12:30\u202fAM"
+        "hours": "10 AM to 12:30 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 12:30\u202fAM"
+        "hours": "10 AM to 12:30 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 12:30\u202fAM"
+        "hours": "10 AM to 12:30 AM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 12:30\u202fAM"
+        "hours": "10 AM to 12:30 AM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 1\u202fAM"
+        "hours": "10 AM to 1 AM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 12:30\u202fAM"
+        "hours": "10 AM to 12:30 AM"
       }
     ],
     "neighborhood": "Jemur Wonosari, Wonocolo",
@@ -58248,31 +57578,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "7\u202fAM to 10\u202fPM"
+        "hours": "7 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "6\u202fAM to 11\u202fPM"
+        "hours": "6 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "6\u202fAM to 10\u202fPM"
+        "hours": "6 AM to 10 PM"
       }
     ],
     "neighborhood": "Balas Klumprik, Wiyung",
@@ -58371,31 +57701,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Thursday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Friday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Saturday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 9\u202fPM"
+        "hours": "9 AM to 9 PM"
       }
     ],
     "neighborhood": "Wonokromo",
@@ -58629,31 +57959,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 11\u202fPM"
+        "hours": "10 AM to 11 PM"
       }
     ],
     "neighborhood": "Siwalankerto, Wonocolo",
@@ -58806,31 +58136,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Tuesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Wednesday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Thursday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Friday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Saturday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       },
       {
         "day": "Sunday",
-        "hours": "10\u202fAM to 10\u202fPM"
+        "hours": "10 AM to 10 PM"
       }
     ],
     "neighborhood": "Kendangsari, Tenggilis Mejoyo",
@@ -59263,31 +58593,31 @@ export const cleanedCafesData = [
     "openingHours": [
       {
         "day": "Monday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Tuesday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Wednesday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Thursday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Friday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Saturday",
-        "hours": "9:30\u202fAM to 12\u202fAM"
+        "hours": "9:30 AM to 12 AM"
       },
       {
         "day": "Sunday",
-        "hours": "9\u202fAM to 11\u202fPM"
+        "hours": "9 AM to 11 PM"
       }
     ],
     "neighborhood": "Siwalankerto, Wonocolo",
@@ -59413,49 +58743,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -59652,42 +58982,42 @@ export const cleanedCafesData = [
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       }
     ],
@@ -59828,49 +59158,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -60005,42 +59335,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
@@ -60221,49 +59551,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       }
     ],
@@ -60415,49 +59745,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8:30\u202fAM to 10\u202fPM"
+          "hours": "8:30 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8:30\u202fAM to 10\u202fPM"
+          "hours": "8:30 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8:30\u202fAM to 10\u202fPM"
+          "hours": "8:30 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8:30\u202fAM to 10\u202fPM"
+          "hours": "8:30 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8:30\u202fAM to 10\u202fPM"
+          "hours": "8:30 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8:30\u202fAM to 10\u202fPM"
+          "hours": "8:30 AM to 10 PM"
         }
       }
     ],
@@ -60586,49 +59916,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       }
     ],
@@ -60795,49 +60125,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6 to 11:30\u202fPM"
+          "hours": "6 to 11:30 PM"
         }
       }
     ],
@@ -60960,49 +60290,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       }
     ],
@@ -61158,49 +60488,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       }
     ],
@@ -61500,49 +60830,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "12\u202fPM to 12\u202fAM"
+          "hours": "12 PM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "12\u202fPM to 12\u202fAM"
+          "hours": "12 PM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "12\u202fPM to 12\u202fAM"
+          "hours": "12 PM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 12\u202fam"
+          "hours": "8 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 12\u202fam"
+          "hours": "8 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 12\u202fam"
+          "hours": "8 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 12\u202fam"
+          "hours": "8 AM to 12 am"
         }
       }
     ],
@@ -61662,49 +60992,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -61864,49 +61194,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       }
     ],
@@ -62040,49 +61370,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "9\u202fAM to 12\u202fam"
+          "hours": "9 AM to 12 am"
         }
       }
     ],
@@ -62300,49 +61630,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       }
     ],
@@ -62471,49 +61801,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 10\u202fPM"
+          "hours": "11 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       }
     ],
@@ -62759,49 +62089,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 12\u202fAM"
+          "hours": "7 AM to 12 AM"
         }
       }
     ],
@@ -62941,49 +62271,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6:30\u202fAM to 11\u202fPM"
+          "hours": "6:30 AM to 11 PM"
         }
       }
     ],
@@ -63136,42 +62466,42 @@ export const cleanedCafesData = [
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       }
     ],
@@ -63308,49 +62638,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7:30\u202fAM to 12:30\u202fAM"
+          "hours": "7:30 AM to 12:30 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7:30\u202fAM to 12:30\u202fAM"
+          "hours": "7:30 AM to 12:30 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7:30\u202fAM to 12:30\u202fAM"
+          "hours": "7:30 AM to 12:30 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7:30\u202fAM to 12:30\u202fAM"
+          "hours": "7:30 AM to 12:30 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7:30\u202fAM to 3\u202fAM"
+          "hours": "7:30 AM to 3 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7:30\u202fAM to 3\u202fAM"
+          "hours": "7:30 AM to 3 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7:30\u202fAM to 12:30\u202fAM"
+          "hours": "7:30 AM to 12:30 AM"
         }
       }
     ],
@@ -63676,49 +63006,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -63890,49 +63220,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 11\u202fPM"
+          "hours": "11 AM to 11 PM"
         }
       }
     ],
@@ -64093,49 +63423,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 12\u202fAM"
+          "hours": "11 AM to 12 AM"
         }
       }
     ],
@@ -64234,49 +63564,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11:30\u202fAM to 9\u202fPM"
+          "hours": "11:30 AM to 9 PM"
         }
       }
     ],
@@ -64508,49 +63838,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -64720,49 +64050,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -64956,49 +64286,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -65533,7 +64863,7 @@ export const cleanedCafesData = [
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "12\u202fAM to 11:59\u202fPM"
+          "hours": "12 AM to 11:59 PM"
         }
       },
       {
@@ -65652,49 +64982,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
+          "hours": "7 AM to 11:30 PM"
         }
       }
     ],
@@ -65989,49 +65319,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "5\u202fPM to 2:30\u202fAM"
+          "hours": "5 PM to 2:30 AM"
         }
       }
     ],
@@ -66367,49 +65697,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 3\u202fAM"
+          "hours": "8 AM to 3 AM"
         }
       }
     ],
@@ -66535,49 +65865,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       }
     ],
@@ -66742,42 +66072,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 10\u202fPM"
+          "hours": "9 AM to 10 PM"
         }
       },
       {
@@ -66898,49 +66228,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -67325,49 +66655,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       }
     ],
@@ -67560,49 +66890,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 11:30\u202fPM"
+          "hours": "10 AM to 11:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 9\u202fPM"
+          "hours": "10 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 11:30\u202fPM"
+          "hours": "10 AM to 11:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 11:30\u202fPM"
+          "hours": "10 AM to 11:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 11:30\u202fPM"
+          "hours": "10 AM to 11:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 11:30\u202fPM"
+          "hours": "10 AM to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 11:30\u202fPM"
+          "hours": "10 AM to 11:30 PM"
         }
       }
     ],
@@ -67711,211 +67041,6 @@ export const cleanedCafesData = [
     "coordinates_estimated": true
   },
   {
-    "id": "ChIJSdLYCTj71y0R5T8YzHTk4E0",
-    "name": "TENTWO Coffee & Kindness",
-    "address": "Jl. Jawa No.41, Gubeng, Kec. Gubeng, Surabaya, Jawa Timur 60281, Indonesia",
-    "rating": "4.4",
-    "reviewCount": 355,
-    "placeId": "ChIJSdLYCTj71y0R5T8YzHTk4E0",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=TENTWO%20Coffee%20%26%20Kindness&query_place_id=ChIJSdLYCTj71y0R5T8YzHTk4E0",
-    "categories": [
-      "Cafe"
-    ],
-    "phone": "+62 817-0311-2860",
-    "website": "https://instagram.com/tentwocoffee?igshid=1us3vfcjn4hnw",
-    "openingHours": [
-      {
-        "day": "Monday",
-        "hours": {
-          "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      },
-      {
-        "day": "Tuesday",
-        "hours": {
-          "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      },
-      {
-        "day": "Wednesday",
-        "hours": {
-          "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      },
-      {
-        "day": "Thursday",
-        "hours": {
-          "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      },
-      {
-        "day": "Friday",
-        "hours": {
-          "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      },
-      {
-        "day": "Saturday",
-        "hours": {
-          "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      },
-      {
-        "day": "Sunday",
-        "hours": {
-          "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
-        }
-      }
-    ],
-    "neighborhood": "Gubeng",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipM5VZ2r_k2wfIrH6aiDjwgUtT0lWF8vE6CwrONB=w426-h240-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "Takeaway": true
-        },
-        {
-          "Dine-in": true
-        }
-      ],
-      "Highlights": [
-        {
-          "Great coffee": true
-        },
-        {
-          "Great dessert": true
-        },
-        {
-          "Great tea selection": true
-        }
-      ],
-      "Popular for": [
-        {
-          "Lunch": true
-        },
-        {
-          "Dinner": true
-        },
-        {
-          "Solo dining": true
-        },
-        {
-          "Good for working on laptop": true
-        }
-      ],
-      "Accessibility": [
-        {
-          "Wheelchair-accessible seating": false
-        }
-      ],
-      "Offerings": [
-        {
-          "Coffee": true
-        },
-        {
-          "Quick bite": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Breakfast": true
-        },
-        {
-          "Brunch": true
-        },
-        {
-          "Lunch": true
-        },
-        {
-          "Dinner": true
-        },
-        {
-          "Dessert": true
-        },
-        {
-          "Seating": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Toilet": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cosy": true
-        },
-        {
-          "Trendy": true
-        }
-      ],
-      "Crowd": [
-        {
-          "Groups": true
-        },
-        {
-          "University students": true
-        }
-      ],
-      "Planning": [
-        {
-          "Accepts reservations": true
-        }
-      ],
-      "Payments": [
-        {
-          "Credit cards": true
-        },
-        {
-          "Debit cards": true
-        },
-        {
-          "Credit cards": true
-        }
-      ],
-      "Children": [
-        {
-          "High chairs": true
-        }
-      ],
-      "Parking": [
-        {
-          "Paid street parking": true
-        },
-        null
-      ]
-    },
-    "permanentlyClosed": false,
-    "lastUpdated": "2025-06-07T03:29:09.652Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Timur",
-    "coordinates": [
-      -7.265,
-      112.752
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T18:06:22.601825",
-    "coordinates_source": "surabaya_area_mapping",
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJm8jFjHP61y0RmqS-N0T8aWM",
     "name": "Kopiganes",
     "address": "Jl. Keputih Tegal Tim. II No.116, Keputih, Kec. Sukolilo, Surabaya, Jawa Timur 60111, Indonesia",
@@ -67933,49 +67058,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "5 to 10\u202fPM"
+          "hours": "5 to 10 PM"
         }
       }
     ],
@@ -68125,49 +67250,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -68331,49 +67456,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "2 to 10\u202fPM"
+          "hours": "2 to 10 PM"
         }
       }
     ],
@@ -68483,194 +67608,6 @@ export const cleanedCafesData = [
     "coordinates_estimated": true
   },
   {
-    "id": "ChIJtz8kf8D81y0RaEOVPYwm1-I",
-    "name": "Kedai Ku",
-    "address": "Jl. Balas Klumprik No.48, Balas Klumprik, Kec. Wiyung, Surabaya, Jawa Timur 60222, Indonesia",
-    "rating": "4.5",
-    "reviewCount": 129,
-    "placeId": "ChIJtz8kf8D81y0RaEOVPYwm1-I",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=Kedai%20Ku&query_place_id=ChIJtz8kf8D81y0RaEOVPYwm1-I",
-    "categories": [
-      "Coffee shop"
-    ],
-    "phone": "+62 812-3238-8816",
-    "website": null,
-    "openingHours": [
-      {
-        "day": "Monday",
-        "hours": {
-          "day": "Monday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      },
-      {
-        "day": "Tuesday",
-        "hours": {
-          "day": "Tuesday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      },
-      {
-        "day": "Wednesday",
-        "hours": {
-          "day": "Wednesday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      },
-      {
-        "day": "Thursday",
-        "hours": {
-          "day": "Thursday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      },
-      {
-        "day": "Friday",
-        "hours": {
-          "day": "Friday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      },
-      {
-        "day": "Saturday",
-        "hours": {
-          "day": "Saturday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      },
-      {
-        "day": "Sunday",
-        "hours": {
-          "day": "Sunday",
-          "hours": "7\u202fAM to 11:30\u202fPM"
-        }
-      }
-    ],
-    "neighborhood": "Balas Klumprik, Wiyung",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/p/AF1QipOUSQ0Yzteg4jWzlWJslSHbF4DiAZds5_Ju6DxF=w408-h306-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "Takeout": true
-        },
-        {
-          "Dine-in": true
-        }
-      ],
-      "Highlights": [
-        {
-          "Great coffee": true
-        },
-        {
-          "Great tea selection": true
-        }
-      ],
-      "Popular for": [
-        {
-          "Solo dining": true
-        },
-        {
-          "Good for working on laptop": true
-        }
-      ],
-      "Accessibility": [
-        {
-          "Wheelchair accessible entrance": false
-        },
-        {
-          "Wheelchair accessible parking lot": false
-        },
-        {
-          "Wheelchair accessible seating": false
-        }
-      ],
-      "Offerings": [
-        {
-          "Alcohol": true
-        },
-        {
-          "Coffee": true
-        },
-        {
-          "Quick bite": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Seating": true
-        }
-      ],
-      "Amenities": [
-        {
-          "Bar onsite": true
-        },
-        {
-          "Gender-neutral restroom": true
-        },
-        {
-          "Restroom": true
-        },
-        {
-          "Wi-Fi": true
-        },
-        {
-          "Free Wi-Fi": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cozy": true
-        },
-        {
-          "Quiet": true
-        }
-      ],
-      "Crowd": [
-        {
-          "Groups": true
-        }
-      ],
-      "Payments": [
-        {
-          "Cash-only": true
-        }
-      ],
-      "Children": [
-        {
-          "Good for kids": true
-        }
-      ],
-      "Parking": [
-        {
-          "Free parking lot": true
-        },
-        null
-      ]
-    },
-    "permanentlyClosed": false,
-    "lastUpdated": "2025-06-07T03:29:09.652Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Selatan",
-    "coordinates": [
-      -7.31,
-      112.665
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T18:06:22.601880",
-    "coordinates_source": "surabaya_area_mapping",
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJL_3RxIv71y0RUsjBrYf3fb4",
     "name": "My Kopi-O! - Ciputra World",
     "address": "Lantai 3 No.8, Ciputra World surabaya, jalan mayjen sungkono no.89, Gunungsari, dukuh pakis, Gn. Sari, Surabaya, Jawa Timur 60224, Indonesia",
@@ -68688,49 +67625,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -68891,49 +67828,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       }
     ],
@@ -69120,49 +68057,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       }
     ],
@@ -69613,7 +68550,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJmb8yPWr91y0RsxRSjfMTtic",
-    "name": "Michuu Coffee House \ubbf8\uce04 \ucee4\ud53c \ud558\uc6b0\uc2a4",
+    "name": "Michuu Coffee House 미츄 커피 하우스",
     "address": "Ruko Taman Gapura Jalan Puri Widya Kencana No.K6/11, Lidah Kulon, Kec. Lakarsantri, Surabaya, Jawa Timur 60213, Indonesia",
     "rating": "4.6",
     "reviewCount": 239,
@@ -69629,49 +68566,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 9\u202fPM"
+          "hours": "8 AM to 9 PM"
         }
       }
     ],
@@ -69849,14 +68786,14 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 2\u202fPM"
+          "hours": "6 AM to 2 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 2\u202fPM"
+          "hours": "6 AM to 2 PM"
         }
       },
       {
@@ -69870,28 +68807,28 @@ export const cleanedCafesData = [
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 2\u202fPM"
+          "hours": "6 AM to 2 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 2\u202fPM"
+          "hours": "6 AM to 2 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 2\u202fPM"
+          "hours": "6 AM to 2 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 2\u202fPM"
+          "hours": "6 AM to 2 PM"
         }
       }
     ],
@@ -70055,49 +68992,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -70245,49 +69182,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       }
     ],
@@ -70515,42 +69452,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
@@ -70690,49 +69627,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       }
     ],
@@ -70907,49 +69844,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -71065,49 +70002,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 9\u202fPM"
+          "hours": "6 AM to 9 PM"
         }
       }
     ],
@@ -71303,21 +70240,21 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
@@ -71331,21 +70268,21 @@ export const cleanedCafesData = [
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 7\u202fPM"
+          "hours": "11 AM to 7 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 7\u202fPM"
+          "hours": "7 AM to 7 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 7\u202fPM"
+          "hours": "7 AM to 7 PM"
         }
       }
     ],
@@ -71497,49 +70434,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3\u202fPM to 12\u202fAM"
+          "hours": "3 PM to 12 AM"
         }
       }
     ],
@@ -71891,49 +70828,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -72277,42 +71214,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7:30\u202fAM to 10\u202fPM"
+          "hours": "7:30 AM to 10 PM"
         }
       },
       {
@@ -72647,49 +71584,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       }
     ],
@@ -72886,49 +71823,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 9\u202fPM"
+          "hours": "7 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -73121,49 +72058,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 12\u202fAM"
+          "hours": "8 AM to 12 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 11:30\u202fPM"
+          "hours": "8 AM to 11:30 PM"
         }
       }
     ],
@@ -73321,49 +72258,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -73524,49 +72461,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 11\u202fPM"
+          "hours": "8 AM to 11 PM"
         }
       }
     ],
@@ -73718,49 +72655,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 12\u202fAM"
+          "hours": "10 AM to 12 AM"
         }
       }
     ],
@@ -73894,28 +72831,28 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
@@ -73929,14 +72866,14 @@ export const cleanedCafesData = [
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "3 to 11\u202fPM"
+          "hours": "3 to 11 PM"
         }
       }
     ],
@@ -74037,49 +72974,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 11\u202fPM"
+          "hours": "10 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       }
     ],
@@ -74252,49 +73189,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -74458,49 +73395,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10\u202fAM to 10\u202fPM"
+          "hours": "10 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10\u202fAM to 12\u202fam"
+          "hours": "10 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 10\u202fPM"
+          "hours": "7 AM to 10 PM"
         }
       }
     ],
@@ -74610,49 +73547,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "11\u202fAM to 12\u202fam"
+          "hours": "11 AM to 12 am"
         }
       }
     ],
@@ -74760,7 +73697,7 @@ export const cleanedCafesData = [
   },
   {
     "id": "ChIJkWtia1771y0RYjT_-PmDpqo",
-    "name": "\ud835\udc05\ud835\udc28\ud835\udc2e\ud835\udc2b\ud835\udc1b\ud835\udc2e\ud835\udc27\ud835\udc1c\ud835\udc21 \ud835\udc02\ud835\udc28\ud835\udc1f\ud835\udc1f\ud835\udc1e\ud835\udc1e",
+    "name": "𝐅𝐨𝐮𝐫𝐛𝐮𝐧𝐜𝐡 𝐂𝐨𝐟𝐟𝐞𝐞",
     "address": "Jl. Wonorejo Permai No.73, Wonorejo, Kec. Rungkut, Surabaya, Jawa Timur 60297, Indonesia",
     "rating": "4.8",
     "reviewCount": 80,
@@ -74776,42 +73713,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 9\u202fPM"
+          "hours": "9 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "3 to 10\u202fPM"
+          "hours": "3 to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "3 to 10\u202fPM"
+          "hours": "3 to 10 PM"
         }
       },
       {
@@ -74935,160 +73872,6 @@ export const cleanedCafesData = [
     "coordinates_estimated": true
   },
   {
-    "id": "ChIJO4SgQbf81y0RGHF2MwSxAJ8",
-    "name": "Warkop Akas",
-    "address": "No Jl. Ksatria No.2-4, Karang Pilang, Kec. Karangpilang, Surabaya, Jawa Timur 60222, Indonesia",
-    "rating": "4.4",
-    "reviewCount": 153,
-    "placeId": "ChIJO4SgQbf81y0RGHF2MwSxAJ8",
-    "google_maps_direction": "https://www.google.com/maps/search/?api=1&query=Warkop%20Akas&query_place_id=ChIJO4SgQbf81y0RGHF2MwSxAJ8",
-    "categories": [
-      "Coffee shop"
-    ],
-    "phone": "+62 857-4877-6607",
-    "website": null,
-    "openingHours": [
-      {
-        "day": "Monday",
-        "hours": {
-          "day": "Monday",
-          "hours": "Open 24 hours"
-        }
-      },
-      {
-        "day": "Tuesday",
-        "hours": {
-          "day": "Tuesday",
-          "hours": "Open 24 hours"
-        }
-      },
-      {
-        "day": "Wednesday",
-        "hours": {
-          "day": "Wednesday",
-          "hours": "Open 24 hours"
-        }
-      },
-      {
-        "day": "Thursday",
-        "hours": {
-          "day": "Thursday",
-          "hours": "Open 24 hours"
-        }
-      },
-      {
-        "day": "Friday",
-        "hours": {
-          "day": "Friday",
-          "hours": "Open 24 hours"
-        }
-      },
-      {
-        "day": "Saturday",
-        "hours": {
-          "day": "Saturday",
-          "hours": "12\u202fAM to 11:59\u202fPM"
-        }
-      },
-      {
-        "day": "Sunday",
-        "hours": {
-          "day": "Sunday",
-          "hours": "Open 24 hours"
-        }
-      }
-    ],
-    "neighborhood": "Karang Pilang, Karangpilang",
-    "city": "Surabaya",
-    "description": null,
-    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np4m_Eywtpl34DJk2S8XPzm0ZGPoTTHGQsfhkJf1PrIXxEa4z5blWeuZZuisgE9VnLErUGCELL57XHPl6zZpzY4w_amSPPn-kNdfpHIuxlXJg9Rk8NAAujBfEJjm655BorcqdIuLg=w408-h544-k-no",
-    "additionalInfo": {
-      "Service options": [
-        {
-          "Outdoor seating": true
-        },
-        {
-          "Takeout": true
-        },
-        {
-          "Dine-in": true
-        },
-        {
-          "Delivery": false
-        }
-      ],
-      "Highlights": [
-        {
-          "Great coffee": true
-        },
-        {
-          "Great tea selection": true
-        }
-      ],
-      "Popular for": [
-        {
-          "Good for working on laptop": true
-        }
-      ],
-      "Accessibility": [
-        {
-          "Wheelchair accessible entrance": false
-        },
-        {
-          "Wheelchair accessible parking lot": false
-        },
-        {
-          "Wheelchair accessible seating": false
-        }
-      ],
-      "Offerings": [
-        {
-          "Coffee": true
-        }
-      ],
-      "Dining options": [
-        {
-          "Seating": true
-        }
-      ],
-      "Atmosphere": [
-        {
-          "Casual": true
-        },
-        {
-          "Cozy": true
-        },
-        {
-          "Quiet": true
-        }
-      ],
-      "Crowd": [
-        {
-          "Groups": true
-        }
-      ],
-      "Payments": [
-        {
-          "Cash-only": true
-        }
-      ]
-    },
-    "permanentlyClosed": false,
-    "lastUpdated": "2025-06-07T03:29:09.653Z",
-    "dataSource": "apify_fresh",
-    "region": "SBY Selatan",
-    "coordinates": [
-      -7.295,
-      112.695
-    ],
-    "coordinatesSource": "region_estimate",
-    "coordinatesAccuracy": "low",
-    "coordinates_corrected": true,
-    "coordinates_updated": "2025-06-07T18:06:22.602619",
-    "coordinates_source": "surabaya_area_mapping",
-    "coordinates_estimated": true
-  },
-  {
     "id": "ChIJw9mKF9791y0RYvA9Sgj1qSU",
     "name": "Eskopi Indonesia - Grand Harvest",
     "address": "Grand Harvest, Taman Harvestory No.H-01, Balas Klumprik, Kec. Wiyung, Surabaya, Jawa Timur 60222, Indonesia",
@@ -75106,49 +73889,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "8\u202fAM to 10\u202fPM"
+          "hours": "8 AM to 10 PM"
         }
       }
     ],
@@ -75269,42 +74052,42 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7\u202fAM to 4\u202fPM"
+          "hours": "7 AM to 4 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7\u202fAM to 4\u202fPM"
+          "hours": "7 AM to 4 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7\u202fAM to 4\u202fPM"
+          "hours": "7 AM to 4 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7\u202fAM to 4\u202fPM"
+          "hours": "7 AM to 4 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7\u202fAM to 4\u202fPM"
+          "hours": "7 AM to 4 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7\u202fAM to 4\u202fPM"
+          "hours": "7 AM to 4 PM"
         }
       },
       {
@@ -75448,49 +74231,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7:30\u202fAM to 11\u202fPM"
+          "hours": "7:30 AM to 11 PM"
         }
       }
     ],
@@ -75707,49 +74490,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "6\u202fAM to 11\u202fPM"
+          "hours": "6 AM to 11 PM"
         }
       }
     ],
@@ -75938,49 +74721,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "4\u202fPM to 3\u202fAM"
+          "hours": "4 PM to 3 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "4\u202fPM to 3\u202fAM"
+          "hours": "4 PM to 3 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "4\u202fPM to 2\u202fAM"
+          "hours": "4 PM to 2 AM"
         }
       }
     ],
@@ -76162,49 +74945,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "9\u202fAM to 11\u202fPM"
+          "hours": "9 AM to 11 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "9 to 11\u202fAM, 1\u202fPM to 12\u202fAM"
+          "hours": "9 to 11 AM, 1 PM to 12 AM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "9\u202fAM to 12\u202fAM"
+          "hours": "9 AM to 12 AM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "7\u202fAM to 11\u202fPM"
+          "hours": "7 AM to 11 PM"
         }
       }
     ],
@@ -76461,49 +75244,49 @@ export const cleanedCafesData = [
         "day": "Monday",
         "hours": {
           "day": "Monday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       },
       {
         "day": "Tuesday",
         "hours": {
           "day": "Tuesday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       },
       {
         "day": "Wednesday",
         "hours": {
           "day": "Wednesday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       },
       {
         "day": "Thursday",
         "hours": {
           "day": "Thursday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       },
       {
         "day": "Friday",
         "hours": {
           "day": "Friday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       },
       {
         "day": "Saturday",
         "hours": {
           "day": "Saturday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       },
       {
         "day": "Sunday",
         "hours": {
           "day": "Sunday",
-          "hours": "10:30\u202fAM to 9\u202fPM"
+          "hours": "10:30 AM to 9 PM"
         }
       }
     ],
@@ -76655,11 +75438,12 @@ export const cleanedCafesData = [
 ];
 
 export const fetchCleanedCafesData = async (limit) => {
-  return limit ? cleanedCafesData.slice(0, limit) : cleanedCafesData;
+  const cleaned = activeCafes(cleanedCafesData);
+  return limit ? cleaned.slice(0, limit) : cleaned;
 };
 
 export const fetchCafeById = async (id) => {
-  return cleanedCafesData.find(cafe => cafe.id === id || cafe.placeId === id);
+  return activeCafes(cleanedCafesData).find(cafe => cafe.id === id || cafe.placeId === id);
 };
 
-export const fetchAllCafesData = async () => cleanedCafesData;
+export const fetchAllCafesData = async () => activeCafes(cleanedCafesData);

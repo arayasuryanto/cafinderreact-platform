@@ -1,28 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import AuthModal from '../auth/AuthModal';
 
 const Header = () => {
-  const { user, loading, openAuthModal, closeAuthModal, authModalOpen, signOut, signIn } = useAuth();
-
-  useEffect(() => {
-    console.log('Header render - User:', user, 'Loading:', loading);
-    // Debug: Check localStorage directly
-    const storedUser = localStorage.getItem('cafinder_user');
-    console.log('Direct localStorage check:', storedUser);
-  }, [user, loading]);
-
-  const handleSignInClick = () => {
-    openAuthModal();
-  };
-
-  const handleGoogleSignIn = () => {
-    signIn();
-  };
-
-  const handleSignOut = () => {
-    signOut();
-  };
+  const { openAuthModal, closeAuthModal, authModalOpen } = useAuth();
 
   return (
     <>
@@ -32,47 +13,25 @@ const Header = () => {
           <div className="header-content">
             <div className="logo">
               <a href="/">
-                <img 
-                  src="/images/cafinder-logo.png" 
-                  alt="Cafinder Logo" 
+                <img
+                  src="/images/cafinder-logo.png"
+                  alt="Cafinder Logo"
                   style={{ height: '40px', width: 'auto' }}
                 />
               </a>
             </div>
-            
+
             <ul className="nav-links">
-              <li><a href="/map">Cafe Map</a></li>
+              <li><a href="/map">Peta Cafe</a></li>
               <li><a href="/catalog">Katalog Cafe</a></li>
               <li><a href="/finder">Smart Finder</a></li>
               <li><a href="/tentang-kami">Tentang Kami</a></li>
-              <li><a href="/buat-cafe">🚀Buat Cafe</a></li>
             </ul>
-            
+
             <div className="auth-btns">
-              {user ? (
-                <div className="user-menu">
-                  <div className="user-info">
-                    <img 
-                      src={user.picture} 
-                      alt={user.name}
-                      className="user-avatar"
-                    />
-                    <span className="user-name">{user.given_name}</span>
-                  </div>
-                  <button className="signout-btn" onClick={handleSignOut}>
-                    Sign Out
-                  </button>
-                </div>
-              ) : (
-                <>
-                  <button className="login-btn" onClick={handleSignInClick}>
-                    Login
-                  </button>
-                  <button className="signup-btn" onClick={handleSignInClick}>
-                    Sign Up
-                  </button>
-                </>
-              )}
+              <button className="login-btn" onClick={openAuthModal}>
+                Login
+              </button>
             </div>
           </div>
         </div>
@@ -84,29 +43,18 @@ const Header = () => {
           <div className="mobile-header-content">
             <div className="mobile-logo">
               <a href="/">
-                <img 
-                  src="/images/cafinder-logo.png" 
-                  alt="Cafinder Logo" 
+                <img
+                  src="/images/cafinder-logo.png"
+                  alt="Cafinder Logo"
                   style={{ height: '28px', width: 'auto' }}
                 />
               </a>
             </div>
-            
+
             <div className="mobile-auth">
-              {user ? (
-                <div className="mobile-user-menu">
-                  <img 
-                    src={user.picture} 
-                    alt={user.name}
-                    className="mobile-user-avatar"
-                    onClick={handleSignOut}
-                  />
-                </div>
-              ) : (
-                <button className="mobile-signin-btn" onClick={handleSignInClick}>
-                  Sign In
-                </button>
-              )}
+              <button className="mobile-signin-btn" onClick={openAuthModal}>
+                Login
+              </button>
             </div>
           </div>
         </div>
@@ -116,7 +64,7 @@ const Header = () => {
       <nav className="mobile-bottom-nav">
         <a href="/map" className="nav-item">
           <div className="nav-icon">🗺️</div>
-          <span className="nav-label">Cafe Map</span>
+          <span className="nav-label">Peta Cafe</span>
         </a>
         <a href="/catalog" className="nav-item">
           <div className="nav-icon">☕</div>
@@ -133,10 +81,9 @@ const Header = () => {
       </nav>
 
       {/* Auth Modal */}
-      <AuthModal 
+      <AuthModal
         isOpen={authModalOpen}
         onClose={closeAuthModal}
-        onGoogleSignIn={handleGoogleSignIn}
       />
     </>
   );

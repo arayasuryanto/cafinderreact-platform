@@ -17,15 +17,15 @@ const MapCTA = ({ navigateTo }) => {
       color: '#F05438'
     },
     {
-      icon: '📍',
-      title: 'Lokasi Terdekat',
-      description: 'Cari cafe terdekat dari posisimu',
+      icon: '🧭',
+      title: 'Jelajahi Kota',
+      description: 'Telusuri cafe dari Barat sampai Timur Surabaya',
       color: '#3B82F6'
     },
     {
       icon: '🔍',
-      title: 'Filter Mudah',
-      description: 'Filter sesuai kebutuhanmu',
+      title: 'Cari & Filter',
+      description: 'Cari nama cafe, pilih wilayah, urutkan sesukamu',
       color: '#10B981'
     }
   ];
@@ -190,8 +190,8 @@ const MapCTA = ({ navigateTo }) => {
             </h2>
             
             <p className="creative-description">
-              Lihat semua cafe di Surabaya dalam satu peta. Cari yang terdekat, 
-              filter sesuai kebutuhan, dan dapatkan arah ke lokasi.
+              Lihat semua cafe Surabaya dalam satu peta. Cari berdasarkan nama,
+              filter wilayah, dan langsung dapatkan arah ke lokasinya.
             </p>
 
             {/* Feature Showcase */}
@@ -278,22 +278,22 @@ const MapCTA = ({ navigateTo }) => {
                 <div className="floating-stats">
                   <div className="floating-element ui-bubble top-left">
                     <span className="bubble-icon">☕</span>
-                    <span className="bubble-text">15 cafe nearby</span>
+                    <span className="bubble-text">Ratusan pilihan cafe</span>
                   </div>
-                  
+
                   <div className="floating-element ui-bubble top-right">
                     <span className="bubble-icon">⭐</span>
-                    <span className="bubble-text">4.8 avg rating</span>
+                    <span className="bubble-text">Rating & ulasan</span>
                   </div>
-                  
+
                   <div className="floating-element ui-bubble bottom-left">
-                    <span className="bubble-icon">🚶</span>
-                    <span className="bubble-text">2 min walk</span>
+                    <span className="bubble-icon">🕒</span>
+                    <span className="bubble-text">Info jam buka</span>
                   </div>
-                  
+
                   <div className="floating-element ui-bubble bottom-right">
                     <span className="bubble-icon">📍</span>
-                    <span className="bubble-text">Live location</span>
+                    <span className="bubble-text">Rute sekali klik</span>
                   </div>
                 </div>
               </div>

@@ -27,9 +27,7 @@ class ReviewService {
     try {
       // Ensure Firebase authentication
       if (!auth.currentUser) {
-        console.log('No Firebase user, signing in anonymously...');
         await signInAnonymously(auth);
-        console.log('Firebase anonymous sign-in successful');
       }
 
       const review = {
@@ -47,7 +45,6 @@ class ReviewService {
       };
 
       const docRef = await addDoc(collection(db, this.reviewsCollection), review);
-      console.log('Review added with ID:', docRef.id);
 
       // Update cafe rating
       await this.updateCafeRating(cafeId);
@@ -120,7 +117,6 @@ class ReviewService {
         ...updates,
         updatedAt: serverTimestamp()
       });
-      console.log('Review updated');
     } catch (error) {
       console.error('Error updating review:', error);
       throw error;
@@ -131,7 +127,6 @@ class ReviewService {
   async deleteReview(reviewId, cafeId) {
     try {
       await deleteDoc(doc(db, this.reviewsCollection, reviewId));
-      console.log('Review deleted');
 
       // Update cafe rating after deletion
       await this.updateCafeRating(cafeId);

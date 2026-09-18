@@ -1,11 +1,49 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SimpleCafePage.css'; // Use our new CSS file
-import ReviewSummary from './ReviewSummary';
-import ReviewCard from './ReviewCard';
-import UserReviewsSection from './UserReviewsSection';
 import ReviewModal from '../reviews/ReviewModal';
 import ReviewList from '../reviews/ReviewList';
-import { useAuth } from '../../contexts/AuthContext';
+
+const PLACEHOLDER_IMAGE = '/images/placeholder-cafe.svg';
+
+// Translate weekday keys from the data into Indonesian
+const DAY_NAMES_ID = {
+  Monday: 'Senin',
+  Tuesday: 'Selasa',
+  Wednesday: 'Rabu',
+  Thursday: 'Kamis',
+  Friday: 'Jumat',
+  Saturday: 'Sabtu',
+  Sunday: 'Minggu',
+};
+
+// The raw data nests hours as {day, hours: {day, hours: "4 PM to 10 PM"}}.
+// Flatten any entry to its display string (or null when unknown).
+const normalizeHoursEntry = (entry) => {
+  if (!entry) return null;
+  let value = entry.hours;
+  if (value && typeof value === 'object') value = value.hours;
+  return typeof value === 'string' ? value : null;
+};
+
+// Convert "4 PM to 10 PM" into "16.00–22.00" (Indonesian convention)
+const formatHoursText = (hoursText) => {
+  if (!hoursText) return null;
+  const match = hoursText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*(?:to|-|–)\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+  if (!match) return hoursText;
+  const to24 = (h, ap) => {
+    let hour = parseInt(h, 10) % 12;
+    if (ap.toUpperCase() === 'PM') hour += 12;
+    return `${String(hour).padStart(2, '0')}.00`;
+  };
+  return `${to24(match[1], match[3])}–${to24(match[4], match[6])}`;
+};
+
+const formatEntryForDisplay = (entry) => {
+  const value = normalizeHoursEntry(entry);
+  if (value === null) return null;
+  if (value === 'Closed' || value.toLowerCase() === 'closed') return 'Tutup';
+  return formatHoursText(value) || value;
+};
 
 // Helper function to get the appropriate icon for each facility
 const getFacilityIcon = (feature) => {
@@ -228,80 +266,66 @@ const getFacilityIcon = (feature) => {
 // Helper function to get the first available opening hours
 const getFirstAvailableHours = (openingHours) => {
   if (!openingHours) {
-    return "Hours not available";
+    return "Jam belum tersedia";
   }
-  
+
   // Handle array format (from the JSON data)
   if (Array.isArray(openingHours) && openingHours.length > 0) {
     // Get the current day
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const today = days[new Date().getDay()];
-    
+
     // Try to find today's hours first
     const todayHours = openingHours.find(item => item.day === today);
-    if (todayHours) {
-      return `Today: ${todayHours.hours === "Closed" ? "Closed" : todayHours.hours}`;
+    const todayValue = formatEntryForDisplay(todayHours);
+    if (todayValue) {
+      return `Hari ini: ${todayValue}`;
     }
-    
-    // Otherwise, return the first non-closed hours
-    const openDay = openingHours.find(item => item.hours !== "Closed");
+
+    // Otherwise, return the first day with real hours
+    const openDay = openingHours.find(item => {
+      const value = formatEntryForDisplay(item);
+      return value && value !== 'Tutup';
+    });
     if (openDay) {
-      return `${openDay.day}: ${openDay.hours}`;
+      return `${DAY_NAMES_ID[openDay.day] || openDay.day}: ${formatEntryForDisplay(openDay)}`;
     }
   }
-  
+
   // Handle object format (from the adapter)
   if (typeof openingHours === 'object' && !Array.isArray(openingHours)) {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const today = days[new Date().getDay()];
-    
+
     if (openingHours[today]) {
       const hours = openingHours[today];
-      return `Today: ${hours.open} to ${hours.close}`;
+      return `Hari ini: ${hours.open} to ${hours.close}`;
     }
-    
+
     // Return the first day's hours
     const firstDay = Object.keys(openingHours)[0];
     if (firstDay) {
       const hours = openingHours[firstDay];
-      return `${firstDay}: ${hours.open} to ${hours.close}`;
+      return `${DAY_NAMES_ID[firstDay] || firstDay}: ${hours.open} to ${hours.close}`;
     }
   }
-  
-  return "Hours not available";
+
+  return "Jam belum tersedia";
 };
 
 const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
-  const { user, openAuthModal } = useAuth();
-  
   // State for managing UI elements
   const [showHours, setShowHours] = useState(false);
-  const [displayedReviews, setDisplayedReviews] = useState(3); // Initially show 3 reviews
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [reviewKey, setReviewKey] = useState(0); // Force re-render of ReviewList
-  
-  // Use only existing reviews (no dummy data)
-  const enrichedReviews = useMemo(() => {
-    if (!cafeData) return [];
-    
-    const existingReviews = cafeData.reviews || [];
-    return existingReviews;
-  }, [cafeData]);
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    
-    // Debug log to check if google_maps_direction is available
-    console.log('Cafe data:', cafeData);
-    console.log('Google Maps Direction URL:', cafeData.google_maps_direction);
   }, [cafeData]);
 
-  // Handle review modal
+  // Reviews are posted anonymously via Firebase, so no account gate is needed
   const handleWriteReview = () => {
-    if (!user) {
-      openAuthModal();
-      return;
-    }
     setShowReviewModal(true);
   };
 
@@ -314,10 +338,10 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
     return (
       <div className="container">
         <div className="loading-error">
-          <h2>Could not load cafe data</h2>
-          <p>Sorry, we couldn't find the cafe you're looking for.</p>
+          <h2>Cafe tidak ditemukan</h2>
+          <p>Maaf, cafe yang kamu cari tidak ada atau sudah tidak tersedia.</p>
           <button onClick={onBackToCatalog} className="back-to-catalog-btn">
-            Back to Catalog
+            Kembali ke Katalog
           </button>
         </div>
       </div>
@@ -343,10 +367,23 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
     return stars;
   };
 
-  // Main image from cafe data
-  const mainImage = cafeData.images && cafeData.images.length > 0 
-    ? cafeData.images[0].url 
-    : cafeData.image || 'https://via.placeholder.com/800x400?text=No+Image+Available';
+  // Main image from cafe data, with a branded fallback when the URL is dead
+  const rawImage = cafeData.images && cafeData.images.length > 0
+    ? cafeData.images[0].url
+    : cafeData.image || cafeData.imageUrl;
+  const mainImage = rawImage
+    ? (rawImage.includes('googleusercontent')
+        ? rawImage.replace(/=w\d+-h\d+.*$/, '=w800-h500-k-no')
+        : rawImage)
+    : PLACEHOLDER_IMAGE;
+
+  const handleMainImageError = (e) => {
+    const img = e.currentTarget;
+    if (img.src !== PLACEHOLDER_IMAGE) {
+      img.src = PLACEHOLDER_IMAGE;
+    }
+    img.onerror = null;
+  };
 
   return (
     <div className="simple-cafe-page">
@@ -356,7 +393,8 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
           <a href="/" onClick={(e) => {
             e.preventDefault();
             window.history.pushState({}, '', '/');
-          }}>Home</a>
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}>Beranda</a>
           <span>/</span>
           <a href="/catalog" onClick={(e) => {
             e.preventDefault();
@@ -370,13 +408,7 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
         <div className="cafe-content-wrapper">
           {/* Left side - cafe image */}
           <div className="cafe-main-image">
-            <img src={mainImage} alt={cafeData.name} />
-            <button className="view-all-photos-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="currentColor"/>
-              </svg>
-              View All Photos
-            </button>
+            <img src={mainImage} alt={cafeData.name} onError={handleMainImageError} />
           </div>
           
           {/* Right side - cafe details */}
@@ -389,7 +421,9 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
                   {renderRatingStars(cafeData.rating || 0)}
                 </div>
                 <span className="rating-value">{cafeData.rating?.toFixed(1) || "0.0"}</span>
-                <span className="reviews-count">({cafeData.totalReviews || 0} reviews)</span>
+                {cafeData.totalReviews > 0 && (
+                  <span className="reviews-count">({cafeData.totalReviews} ulasan di Google)</span>
+                )}
               </div>
             </div>
             
@@ -407,30 +441,30 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
                 <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z" fill="#F05438"/>
               </svg>
               <div className="hours-info">
-                {cafeData.openingHours ? (
+                {cafeData.openingHours && (Array.isArray(cafeData.openingHours) ? cafeData.openingHours.length > 0 : Object.keys(cafeData.openingHours).length > 0) ? (
                   <>
                     <span>
                       {getFirstAvailableHours(cafeData.openingHours)}
                       <button className="toggle-hours" onClick={() => setShowHours(!showHours)}>
-                        {showHours ? 'Hide hours' : 'Show all hours'}
+                        {showHours ? 'Sembunyikan' : 'Lihat semua jam'}
                       </button>
                     </span>
                     {showHours && (
                       <div className="all-hours">
                         {Array.isArray(cafeData.openingHours) ? (
-                          // Handle array format (from the JSON data)
+                          // Handle array format (from the JSON data; entries may nest hours as {day, hours})
                           cafeData.openingHours.map((hours, index) => (
                             <div key={index} className="hours-row">
-                              <span className="day">{hours.day}</span>
-                              <span className="time">{hours.hours === "Closed" ? "Closed" : hours.hours}</span>
+                              <span className="day">{DAY_NAMES_ID[hours.day] || hours.day}</span>
+                              <span className="time">{formatEntryForDisplay(hours) || '—'}</span>
                             </div>
                           ))
                         ) : (
                           // Handle object format (from the adapter)
                           Object.entries(cafeData.openingHours).map(([day, hours], index) => (
                             <div key={index} className="hours-row">
-                              <span className="day">{day}</span>
-                              <span className="time">{hours.close === "Closed" ? "Closed" : `${hours.open} to ${hours.close}`}</span>
+                              <span className="day">{DAY_NAMES_ID[day] || day}</span>
+                              <span className="time">{hours.close === "Closed" ? "Tutup" : `${hours.open} to ${hours.close}`}</span>
                             </div>
                           ))
                         )}
@@ -438,7 +472,7 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
                     )}
                   </>
                 ) : (
-                  <span>Opening hours not available</span>
+                  <span>Jam buka belum tersedia</span>
                 )}
               </div>
             </div>
@@ -462,7 +496,7 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21.71 11.29L12.71 2.29C12.32 1.9 11.69 1.9 11.3 2.29L2.3 11.29C1.91 11.68 1.91 12.31 2.3 12.7C2.69 13.09 3.32 13.09 3.71 12.7L11 5.41V21C11 21.55 11.45 22 12 22C12.55 22 13 21.55 13 21V5.41L20.29 12.7C20.48 12.89 20.74 13 21 13C21.26 13 21.52 12.89 21.71 12.7C22.1 12.31 22.1 11.68 21.71 11.29Z" fill="white"/>
                 </svg>
-                Get Directions
+                Rute
               </a>
               <a 
                 href={cafeData.website || "#"} 
@@ -474,7 +508,7 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19 4H5C3.89 4 3 4.9 3 6V20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 20H5V8H19V20ZM15 13H9V14H15V13ZM15 16H9V17H15V16ZM14 10H10V11H14V10Z" fill="currentColor"/>
                 </svg>
-                {cafeData.website ? 'Visit Website' : 'No Website'}
+                {cafeData.website ? 'Kunjungi Website' : 'Belum Ada Website'}
               </a>
               <button 
                 className="review-btn" 
@@ -494,33 +528,36 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
         <div className="cafe-content-section">
           <div className="content-main">
             {/* About Cafe */}
-            <div className="about-cafe-section">
-              <h2 className="section-title">Tentang Cafe</h2>
-              <p className="about-text">{cafeData.description}</p>
-              <button className="show-more-btn">Show more</button>
-            </div>
-            
-            {/* Facilities */}
-            <div className="facilities-section">
-              <h2 className="section-title">Fasilitas</h2>
-              <div className="facilities-grid">
-                {cafeData.features && cafeData.features.map((feature, index) => (
-                  <div className="facility-item" key={index}>
-                    <div className="facility-icon">
-                      {getFacilityIcon(feature)}
-                    </div>
-                    <span className="facility-name">{feature}</span>
-                  </div>
-                ))}
+            {cafeData.description && (
+              <div className="about-cafe-section">
+                <h2 className="section-title">Tentang Cafe</h2>
+                <p className="about-text">{cafeData.description}</p>
               </div>
-            </div>
+            )}
+
+            {/* Facilities */}
+            {cafeData.features && cafeData.features.length > 0 && (
+              <div className="facilities-section">
+                <h2 className="section-title">Fasilitas</h2>
+                <div className="facilities-grid">
+                  {cafeData.features.map((feature, index) => (
+                    <div className="facility-item" key={index}>
+                      <div className="facility-icon">
+                        {getFacilityIcon(feature)}
+                      </div>
+                      <span className="facility-name">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             
-            {/* Google Map Location */}
+            {/* Map Location */}
             <div className="map-section">
-              <h2 className="section-title">Google Map Location</h2>
+              <h2 className="section-title">Lokasi di Peta</h2>
               <div className="map-container">
                 <iframe
-                  title={`${cafeData.name} Location Map`}
+                  title={`Peta lokasi ${cafeData.name}`}
                   width="100%"
                   height="300"
                   style={{ border: 0, borderRadius: '8px' }}
@@ -528,17 +565,18 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
                   src={(() => {
+                    const embedKey = process.env.REACT_APP_GOOGLE_MAPS_EMBED_KEY || 'AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8';
                     // Extract place ID from Google Maps URL if available
                     if (cafeData.placeId) {
-                      return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=place_id:${cafeData.placeId}&zoom=17`;
+                      return `https://www.google.com/maps/embed/v1/place?key=${embedKey}&q=place_id:${cafeData.placeId}&zoom=17`;
                     } else if (cafeData.google_maps_direction) {
                       const match = cafeData.google_maps_direction.match(/query_place_id=([^&]+)/);
                       if (match && match[1]) {
-                        return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=place_id:${match[1]}&zoom=17`;
+                        return `https://www.google.com/maps/embed/v1/place?key=${embedKey}&q=place_id:${match[1]}&zoom=17`;
                       }
                     }
                     // Fallback to address search
-                    return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent((cafeData.fullAddress || cafeData.address || '') + ', Surabaya')}&zoom=15`;
+                    return `https://www.google.com/maps/embed/v1/place?key=${embedKey}&q=${encodeURIComponent((cafeData.fullAddress || cafeData.address || '') + ', Surabaya')}&zoom=15`;
                   })()}
                 ></iframe>
               </div>
@@ -547,52 +585,13 @@ const SimpleCafePage = ({ cafeData, onBackToCatalog }) => {
               </div>
             </div>
           </div>
-          
-          {/* RSVP Card (right sidebar) */}
-          <div className="rsvp-card">
-            <h2 className="rsvp-title">RSVP Sekarang</h2>
-            
-            <div className="rsvp-rating">
-              <div className="stars-container">
-                ⭐ {cafeData.rating}
-              </div>
-              <span className="reviews-count">({cafeData.totalReviews} reviews)</span>
-            </div>
-            
-            <div className="rsvp-field">
-              <label className="rsvp-label">Date</label>
-              <div className="rsvp-input">25 May 2023</div>
-            </div>
-            
-            <div className="rsvp-field">
-              <label className="rsvp-label">Guests</label>
-              <div className="rsvp-input">2 guests</div>
-            </div>
-            
-            <div className="rsvp-price">
-              <span className="price-label">Total Price</span>
-              <span className="price-value">Rp 250.000</span>
-            </div>
-            
-            <button className="rsvp-button">RSVP now</button>
-            
-            <p className="rsvp-notes">* Booking fee is non-refundable</p>
-          </div>
         </div>
-        
+
         {/* Firebase Reviews Section */}
-        <ReviewList 
+        <ReviewList
           key={reviewKey}
-          cafeId={cafeData.id} 
+          cafeId={cafeData.id}
         />
-        
-        {/* "You might also like" section */}
-        <div className="similar-cafes-section">
-          <h2>You might also like</h2>
-          <div className="similar-cafes-placeholder">
-            <p>Similar cafe suggestions coming soon!</p>
-          </div>
-        </div>
       </div>
       
       {/* Review Modal */}

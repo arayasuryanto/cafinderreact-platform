@@ -1,19 +1,14 @@
 {
-  "short_name": "CaFinder",
-  "name": "CaFinder - Discover Perfect Cafes in Surabaya",
+  "short_name": "Cafinder",
+  "name": "Cafinder - Temukan Spot Nongkrong Cepat",
   "icons": [
     {
-      "src": "cafinder-favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "cafinder-favicon.png",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "cafinder-favicon.png",
+      "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
