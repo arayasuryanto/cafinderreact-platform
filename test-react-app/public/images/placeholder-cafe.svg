@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#FDF2EE"/>
+  <g fill="none" stroke="#F05438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 128 h84 v40 a42 42 0 0 1 -84 0 z"/>
+    <path d="M242 136 h14 a16 16 0 0 1 0 32 h-14"/>
+    <path d="M150 196 h100"/>
+    <path d="M180 112 c0 -8 8 -8 8 -16" stroke-width="3" opacity="0.55"/>
+    <path d="M204 112 c0 -8 8 -8 8 -16" stroke-width="3" opacity="0.55"/>
+  </g>
+  <text x="200" y="238" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#B98A7C">Foto belum tersedia</text>
+</svg>
